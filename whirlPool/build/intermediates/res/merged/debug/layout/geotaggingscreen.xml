@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/imageView"
+           android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+            android:background="@drawable/head_banner" />
+        
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            
+            android:background="@drawable/header_title" />
+        
+        <RelativeLayout android:id="@+id/header"
+            android:layout_below="@+id/imageView1"
+            android:background="@drawable/list_bg1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            
+	
+        <TextView
+            android:id="@+id/txt_selectcity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="Select City"
+            android:textSize="14sp"
+            android:textColor="#000000"
+             />
+
+        <Spinner
+            android:id="@+id/select_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/list_box_1"
+            android:paddingLeft="8dp"
+            android:layout_marginRight="2dp"
+            android:textColor="#021f22"
+            android:textSize="18sp" />
+
+      </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"       
+          	android:visibility="invisible"
+            android:layout_marginLeft="330dp"
+             />
+
+       
+            
+             <ListView  android:id="@+id/list1"
+    		    android:layout_width="fill_parent"
+    		    android:layout_height="fill_parent" 
+    			android:layout_below="@+id/header"
+    			android:layout_marginRight="5dp"
+    			android:layout_marginTop="2dp"
+    			android:layout_marginLeft="5dp"
+    	  		android:fastScrollEnabled="true"
+    		    android:smoothScrollbar="true"
+    		    android:cacheColorHint="#00000000" 
+    		    android:drawSelectorOnTop="false"
+    		    android:divider="@drawable/line"		
+    		  />
+
+             <TextView
+                 android:id="@+id/textView1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignLeft="@+id/list1"
+                 android:layout_marginTop="70dp"
+                 android:layout_marginLeft="14dp"
+                 android:textColor="#ffffff"
+                 android:textSize="15sp"
+                 android:text="Add Geo Tag" />
+        
+    </RelativeLayout>

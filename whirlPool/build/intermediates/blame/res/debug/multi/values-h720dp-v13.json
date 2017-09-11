@@ -1,0 +1,50 @@
+[
+    {
+        "outputFile": "F:\\jeevanAndroidProject\\androidProject\\whirlpool-23AUG\\whirlPool\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 66,
+                    "endOffset": 117
+                },
+                "from": {
+                    "file": "C:\\Users\\jeevanp.CPMIN.000\\.android\\build-cache\\37114a92b09733590c9f0ff965b708862df47420\\output\\res\\values-h720dp\\values-h720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 232,
+                        "endColumn": 66,
+                        "endOffset": 294
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "G:\\Gagan\\svn_workspace\\whirlpool\\whirlPool\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 66,
+                    "endOffset": 117
+                },
+                "from": {
+                    "file": "C:\\Users\\gagang.CPMIN\\.android\\build-cache\\ead397f089a02bcf248fc3eef4c177378ade427c\\output\\res\\values-h720dp\\values-h720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 232,
+                        "endColumn": 66,
+                        "endOffset": 294
+                    }
+                }
+            }
+        ]
+    }
+]

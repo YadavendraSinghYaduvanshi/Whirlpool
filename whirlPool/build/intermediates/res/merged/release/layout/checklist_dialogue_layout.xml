@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Check list"
+        android:textSize="@dimen/store_entry_text_size"
+        android:textStyle="bold"
+        android:background="@color/primarycolor"
+        android:textColor="@color/white"
+        android:gravity="center"
+       />
+
+    <ListView
+        android:id="@+id/lv_checklist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        ></ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primarycolor"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+
+            >
+            <Button
+                android:id="@+id/btn_save_checklist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/save"
+                android:textColor="@color/primarycolor"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <Button
+                android:id="@+id/btn_cancel_checklist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/cancel"
+                android:textColor="@color/primarycolor"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
