@@ -16,9 +16,6 @@ import com.cpm.geotag.GeotaggingBeans;
 import com.cpm.xmlGetterSetter.AssetInsertdataGetterSetter;
 import com.cpm.xmlGetterSetter.CallsGetterSetter;
 import com.cpm.xmlGetterSetter.ChecklistInsertDataGetterSetter;
-import com.cpm.xmlGetterSetter.ClosingStockInsertDataGetterSetter;
-import com.cpm.xmlGetterSetter.ColdroomClosingGetterSetter;
-import com.cpm.xmlGetterSetter.CompanyGetterSetter;
 import com.cpm.xmlGetterSetter.CompetitionPromotionGetterSetter;
 import com.cpm.xmlGetterSetter.DeepFreezerTypeGetterSetter;
 import com.cpm.xmlGetterSetter.DeploymentFormGetterSetter;
@@ -26,17 +23,14 @@ import com.cpm.xmlGetterSetter.DeploymentXmlGetterSetter;
 import com.cpm.xmlGetterSetter.FacingCompetitorGetterSetter;
 import com.cpm.xmlGetterSetter.FoodStoreInsertDataGetterSetter;
 import com.cpm.xmlGetterSetter.HeaderGetterSetter;
-import com.cpm.xmlGetterSetter.JCPGetterSetter;
 import com.cpm.xmlGetterSetter.JourneyPlanGetterSetter;
 import com.cpm.xmlGetterSetter.MappingAssetChecklistGetterSetter;
 import com.cpm.xmlGetterSetter.MappingAssetGetterSetter;
 import com.cpm.xmlGetterSetter.MappingStatusWindows;
-import com.cpm.xmlGetterSetter.MiddayStockInsertData;
 import com.cpm.xmlGetterSetter.NonWorkingReasonGetterSetter;
 import com.cpm.xmlGetterSetter.POSM_MASTERGetterSetter;
 import com.cpm.xmlGetterSetter.POSM_MASTER_DataGetterSetter;
 import com.cpm.xmlGetterSetter.PerformanceGetterSetter;
-import com.cpm.xmlGetterSetter.PromotionInsertDataGetterSetter;
 import com.cpm.xmlGetterSetter.STOREFIRSTIMEGetterSetter;
 import com.cpm.xmlGetterSetter.StockGetterSetter;
 import com.cpm.xmlGetterSetter.StockNewGetterSetter;
@@ -48,7 +42,7 @@ import java.util.List;
 
 
 public class GSKDatabase extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "WHIRLPOOL_DATABASE_3";
+    public static final String DATABASE_NAME = "WHIRLPOOL_DATABASE_4";
     public static final int DATABASE_VERSION = 5;
     private SQLiteDatabase db;
 
@@ -3959,7 +3953,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
 
 
     //POSM Tracking Default Data
-    public ArrayList<POSM_MASTER_DataGetterSetter> getPOSMCategoryHeaderWithoutCompetitorData(String pCategory_cd) {
+    public ArrayList<POSM_MASTER_DataGetterSetter> getPOSMCategoryHeaderWithCompetitorData(String pCategory_cd) {
         Log.d("Fetching", "POSM Tracking--------------->Start<------------");
 
         ArrayList<POSM_MASTER_DataGetterSetter> categoryData = new ArrayList<>();
@@ -3968,7 +3962,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
         try {
             dbcursor = db.rawQuery("Select DISTINCT PSUB_CATEGORY_CD,PSUB_CATEGORY " +
                     "from POSM_MASTER " +
-                    "where  PCATEGORY_CD= '" + pCategory_cd + "' AND PSUB_CATEGORY NOT LIKE '"+"%Competition%"+"'", null);
+                    "where  PCATEGORY_CD= '" + pCategory_cd + "' AND PSUB_CATEGORY LIKE '"+"%Competition%"+"'", null);
 
 
             if (dbcursor != null) {
@@ -4308,29 +4302,39 @@ public class GSKDatabase extends SQLiteOpenHelper {
         return list;
     }
 
-    public boolean isCheckPOSM_CategoryFill(String store_cd, ArrayList<POSM_MASTER_DataGetterSetter> categoryList) {
+    public boolean isCheckPOSM_CategoryFill(String store_cd, ArrayList<POSM_MASTER_DataGetterSetter> categoryList, String date) {
         Log.d("POSM Tracking Data ", "Posm Tracking data--------------->Start<------------");
-
+        CoverageBean coverage;
+        ArrayList<POSM_MASTER_DataGetterSetter> headerDataList;
         Cursor dbcursor = null;
         boolean flag = true;
 
         try {
             for (int i = 0; i < categoryList.size(); i++) {
 
-                dbcursor = db.rawQuery("Select * from Store_wise_camera " +
-                        "where STORE_CD='" + store_cd +
-                        "' and PCATEGORY_CD='" + categoryList.get(i).getpCategory_cd() + "'", null);
+                coverage = getCoverageWhirlpoolSkuData(date,store_cd);
 
-                if (dbcursor != null) {
-                    dbcursor.moveToFirst();
-                    int icount = dbcursor.getCount();
-                    dbcursor.close();
+                if(coverage.getWhirlpool_sku().equalsIgnoreCase("1")){
+                    headerDataList = getPOSMCategoryHeaderData(categoryList.get(i).getpCategory_cd());
+                }else{
+                    headerDataList = getPOSMCategoryHeaderWithCompetitorData(categoryList.get(i).getpCategory_cd());
+                }
 
-                    if (icount <= 0) {
-                        flag = false;
-                        break;
+                if(headerDataList.size() >0){
+                    dbcursor = db.rawQuery("Select * from Store_wise_camera " +
+                            "where STORE_CD='" + store_cd +
+                            "' and PCATEGORY_CD='" + categoryList.get(i).getpCategory_cd() + "'", null);
+
+                    if (dbcursor != null) {
+                        dbcursor.moveToFirst();
+                        int icount = dbcursor.getCount();
+                        dbcursor.close();
+
+                        if (icount <= 0) {
+                            flag = false;
+                            break;
+                        }
                     }
-
                 }
             }
 

@@ -16,9 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,15 +25,11 @@ import com.cpm.GetterSetter.NavMenuItemGetterSetter;
 import com.cpm.whirlpool.R;
 import com.cpm.database.GSKDatabase;
 import com.cpm.geotag.LocationActivity;
-import com.cpm.xmlGetterSetter.MiddayStockInsertData;
-import com.cpm.xmlGetterSetter.OpeningStockInsertDataGetterSetter;
-import com.cpm.xmlGetterSetter.POSM_MASTERGetterSetter;
 import com.cpm.xmlGetterSetter.POSM_MASTER_DataGetterSetter;
 import com.cpm.xmlGetterSetter.StockGetterSetter;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 public class StoreEntry extends AppCompatActivity implements OnClickListener {
@@ -85,7 +79,7 @@ public class StoreEntry extends AppCompatActivity implements OnClickListener {
         boolean flag = true;
         categoryList = db.getPOSMCategoryData();
         if (categoryList.size() > 0) {
-            if (!db.isCheckPOSM_CategoryFill(store_cd, categoryList)) {
+            if (!db.isCheckPOSM_CategoryFill(store_cd, categoryList, date)) {
                 flag = false;
             }
             if (!db.isDeploymentFormFilled(store_cd)) {
@@ -235,7 +229,7 @@ public class StoreEntry extends AppCompatActivity implements OnClickListener {
                 public void onClick(View v) {
                     if (current.getIconImg() == R.drawable.posm || current.getIconImg() == R.drawable.posm_done) {
                         categoryList = db.getPOSMCategoryData();
-                        if (!db.isCheckPOSM_CategoryFill(store_cd, categoryList)) {
+                        if (!db.isCheckPOSM_CategoryFill(store_cd, categoryList, date)) {
                             Intent in1 = new Intent(StoreEntry.this, POSMCategoryListActivity.class);
                             startActivity(in1);
                             overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
@@ -345,7 +339,7 @@ public class StoreEntry extends AppCompatActivity implements OnClickListener {
         }
         categoryList = db.getPOSMCategoryData();
 
-        if (db.isCheckPOSM_CategoryFill(store_cd, categoryList)) {
+        if (db.isCheckPOSM_CategoryFill(store_cd, categoryList,date)) {
             Stock = R.drawable.posm_done;
         } else {
             Stock = R.drawable.posm;

@@ -527,7 +527,7 @@ public class CommonString1 {
             + METHOD_POSM_MASTER_DOWNLOAD;
 
     // Upload Coverage
-    public static final String METHOD_UPLOAD_DR_STORE_COVERAGE = "UPLOAD_COVERAGE";
+    public static final String METHOD_UPLOAD_DR_STORE_COVERAGE = "UPLOAD_COVERAGENEW2";
     public static final String METHOD_UPLOAD_DR_STORE_COVERAGE_LOC = "UPLOAD_COVERAGE_SUP";
 
     public static final String METHOD_UPLOAD_DR_STORE_GEO_Location = "UPLOAD_Geo_location";

@@ -33,6 +33,7 @@ import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cpm.Constants.CommonFunctions;
 import com.cpm.Constants.CommonString1;
@@ -306,7 +307,7 @@ public class Posm_TrackingActivity extends AppCompatActivity {
             if(coverage.getWhirlpool_sku().equalsIgnoreCase("1")){
                 headerDataList = db.getPOSMCategoryHeaderData(category_cd);
             }else{
-                headerDataList = db.getPOSMCategoryHeaderWithoutCompetitorData(category_cd);
+                headerDataList = db.getPOSMCategoryHeaderWithCompetitorData(category_cd);
             }
 
             if (headerDataList.size() > 0) {
@@ -322,6 +323,7 @@ public class Posm_TrackingActivity extends AppCompatActivity {
             }
             adapter = new ExpandableListAdapter(this, hashMapListHeaderData, hashMapListChildData);
             expandableListView.setAdapter(adapter);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

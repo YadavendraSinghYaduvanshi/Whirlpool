@@ -19,8 +19,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cpm.Constants.CommonString1;
+import com.cpm.delegates.CoverageBean;
 import com.cpm.whirlpool.R;
 import com.cpm.database.GSKDatabase;
 import com.cpm.xmlGetterSetter.POSM_MASTER_DataGetterSetter;
@@ -36,6 +38,8 @@ public class POSMCategoryListActivity extends AppCompatActivity {
     GSKDatabase db;
     String store_id, visit_date, username;
     private SharedPreferences preferences;
+    ArrayList<POSM_MASTER_DataGetterSetter> headerDataList;
+    CoverageBean coverage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +73,6 @@ public class POSMCategoryListActivity extends AppCompatActivity {
         categoryList = db.getPOSMCategoryData();
 
         if (categoryList.size() > 0) {
-
             adapter = new CategoryListAdapter(POSMCategoryListActivity.this, categoryList);
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -128,15 +131,31 @@ public class POSMCategoryListActivity extends AppCompatActivity {
             } else {
                 holder.img_done.setVisibility(View.INVISIBLE);
             }
+
             holder.lay_menu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(POSMCategoryListActivity.this, Posm_TrackingActivity.class);
-                    intent.putExtra("category_cd", data.getpCategory_cd());
-                    intent.putExtra("posm_category", data.getPosm_category());
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+                    db.open();
+                    coverage = db.getCoverageWhirlpoolSkuData(visit_date,store_id);
+                    // here whirlpool_sku used for decided to show competition data
+                    // if whirlpool_sku = 1 then  show competition data
+                    // if whirlpool_sku = 0 then  hide competition data
 
+                    if(coverage.getWhirlpool_sku().equalsIgnoreCase("1")){
+                        headerDataList = db.getPOSMCategoryHeaderData(data.getpCategory_cd());
+                    }else{
+                        headerDataList = db.getPOSMCategoryHeaderWithCompetitorData(data.getpCategory_cd());
+                    }
+
+                    if(headerDataList.size() >0){
+                        Intent intent = new Intent(POSMCategoryListActivity.this, Posm_TrackingActivity.class);
+                        intent.putExtra("category_cd", data.getpCategory_cd());
+                        intent.putExtra("posm_category", data.getPosm_category());
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+                    }else{
+                        Toast.makeText(context, "No whirlpool or competition data found", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
         }
