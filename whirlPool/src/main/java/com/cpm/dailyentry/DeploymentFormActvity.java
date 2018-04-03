@@ -34,13 +34,12 @@ public class DeploymentFormActvity extends AppCompatActivity implements View.OnC
     ImageView img_cam, img_clicked;
     Button btn_save;
     String _pathforcheck, _path, str;
-    String store_cd, visit_date, username, intime, date;
+    String store_cd, visit_date, username, intime;
     private SharedPreferences preferences;
     AlertDialog alert;
     String img_str;
     private GSKDatabase database;
-    DeploymentFormGetterSetter df=new DeploymentFormGetterSetter();
-
+    DeploymentFormGetterSetter df = new DeploymentFormGetterSetter();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,17 +55,19 @@ public class DeploymentFormActvity extends AppCompatActivity implements View.OnC
         store_cd = preferences.getString(CommonString1.KEY_STORE_CD, null);
         visit_date = preferences.getString(CommonString1.KEY_DATE, null);
         username = preferences.getString(CommonString1.KEY_USERNAME, null);
+        setTitle("Deployment Form - " +visit_date);
         str = CommonString1.FILE_PATH;
         database = new GSKDatabase(this);
         database.open();
-        df=database.getdeploymentInsertedData(store_cd);
-        if (!df.getDf_img().equals("")){
+        df = database.getdeploymentInsertedData(store_cd);
+        if (!df.getDf_img().equals("")) {
             if (new File(str + df.getDf_img()).exists()) {
                 Bitmap bmp = BitmapFactory.decodeFile(str + df.getDf_img());
                 img_cam.setImageBitmap(bmp);
                 img_clicked.setVisibility(View.GONE);
                 img_cam.setVisibility(View.VISIBLE);
                 btn_save.setText("UPDATE");
+                img_str = df.getDf_img();
             }
 
         }
@@ -86,6 +87,11 @@ public class DeploymentFormActvity extends AppCompatActivity implements View.OnC
                 startCameraActivity();
                 break;
 
+            case R.id.img_selfie1:
+                _pathforcheck = store_cd + "_DF_" + visit_date.replace("/", "") + "_" + getCurrentTime().replace(":", "") + ".jpg";
+                _path = CommonString1.FILE_PATH + _pathforcheck;
+                startCameraActivity();
+                break;
             case R.id.btn_save_selfie1:
                 if (img_str != null) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(DeploymentFormActvity.this);
@@ -95,6 +101,7 @@ public class DeploymentFormActvity extends AppCompatActivity implements View.OnC
                                 public void onClick(DialogInterface dialog, int id) {
                                     alert.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
                                     database.InsertDeploymentFormData(store_cd, username, visit_date, img_str);
+                                    overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
                                     finish();
 
                                 }
@@ -134,16 +141,16 @@ public class DeploymentFormActvity extends AppCompatActivity implements View.OnC
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            finish();
             overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
-        finish();
         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+        finish();
     }
 
     @Override

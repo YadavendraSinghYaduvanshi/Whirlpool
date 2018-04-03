@@ -1,7 +1,27 @@
 package com.cpm.delegates;
 
 public class TableBean {
-	
+	public static String jcptable;
+	public static String skumastertable;
+	public static String mappingavailtable;
+	public static String deloymentTable;
+	public static String posm_master_table_Bean;
+	public static String mappingpromotable;
+	public static String mappingassettable;
+	public static String deepfreezertable;
+	public static String assetmastertable;
+	public static String nonworkingtable;
+	public static String categorymastertable;
+	public static String performancetable;
+	public static String closingcoldtable;
+	public static String companytable;
+	public static String questiontable;
+	public static String brandtable;
+	public static String asset_checklist_table;
+	public static String mapping_asset_checklist_table;
+
+
+
 	public static String getCategorymastertable() {
 		return categorymastertable;
 	}
@@ -10,9 +30,16 @@ public class TableBean {
 		TableBean.categorymastertable = categorymastertable;
 	}
 
-	public static String jcptable;	
-	public static String skumastertable;
-	public static String mappingavailtable;
+
+
+
+	public static String getDeloymentTable() {
+		return deloymentTable;
+	}
+
+	public static void setDeloymentTable(String deloymentTable) {
+		TableBean.deloymentTable = deloymentTable;
+	}
 
 	public static String getMappingavailablitytable() {
 		return mappingavailablitytable;
@@ -32,29 +59,6 @@ public class TableBean {
 		TableBean.posm_master_table_Bean = posm_master_table_Bean;
 	}
 
-	public static String posm_master_table_Bean;
-
-
-
-	public static String mappingpromotable;
-	public static String mappingassettable;
-	public static String deepfreezertable;
-	public static String assetmastertable;
-	public static String nonworkingtable;
-	public static String categorymastertable;
-	public static String performancetable;
-	
-	public static String closingcoldtable;
-
-	public static String companytable;
-
-	public static String questiontable;
-
-	public static String brandtable;
-
-	public static String asset_checklist_table;
-
-	public static String mapping_asset_checklist_table;
 
 	public static String getClosingcoldtable() {
 		return closingcoldtable;
@@ -177,102 +181,5 @@ public class TableBean {
 	public static void setMapping_asset_checklist_table(String mapping_asset_checklist_table) {
 		TableBean.mapping_asset_checklist_table = mapping_asset_checklist_table;
 	}
-
-	
-/*public static String merchandisetable;
-
-public static String storeTable;
-public static String nonWorkingTable;
-public static String distributorTable;
-
-public static String journeyplan;
-public static String designation;
-
-public static String tableDeviation;
-public static String secWindow;
-public static String supPerform;
-public static String supMerchandiser;*/
-
-/*public static String getSecWindow() {
-	return secWindow;
-}
-
-public static void setSecWindow(String secWindow) {
-	TableBean.secWindow = secWindow;
-}
-
-public static String getSupMerchandiser() {
-	return supMerchandiser;
-}
-
-public static void setSupMerchandiser(String supMerchandiser) {
-	TableBean.supMerchandiser = supMerchandiser;
-}
-
-public static String getSupPerform() {
-	return supPerform;
-}
-
-public static void setSupPerform(String supPerform) {
-	TableBean.supPerform = supPerform;
-}
-
-public static String getTableDeviation() {
-	return tableDeviation;
-}
-
-public static void setTableDeviation(String tableDeviation) {
-	TableBean.tableDeviation = tableDeviation;
-}
-
-public static String getJourneyplan() {
-	return journeyplan;
-}
-
-public static void setJourneyplan(String journeyplan) {
-	TableBean.journeyplan = journeyplan;
-}
-
-public static String getDesignation() {
-	return designation;
-}
-
-public static void setDesignation(String designation) {
-	TableBean.designation = designation;
-}
-
-public static String getDistributorTable() {
-	return distributorTable;
-}
-
-public static void setDistributorTable(String distributorTable) {
-	TableBean.distributorTable = distributorTable;
-}
-
-public static String getNonWorkingTable() {
-	return nonWorkingTable;
-}
-
-public static void setNonWorkingTable(String nonWorkingTable) {
-	TableBean.nonWorkingTable = nonWorkingTable;
-}
-
-public static String getStoreTable() {
-	return storeTable;
-}
-
-public static void setStoreTable(String storeTable) {
-	TableBean.storeTable = storeTable;
-}
-
-public static String getMerchandisetable() {
-	return merchandisetable;
-}
-
-public static void setMerchandisetable(String merchandisetable) {
-	TableBean.merchandisetable = merchandisetable;
-}*/
-
-
 
 }

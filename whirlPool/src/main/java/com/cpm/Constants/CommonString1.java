@@ -5,6 +5,7 @@ import android.os.Environment;
 public class CommonString1 {
 
     public static final String FILE_PATH = Environment.getExternalStorageDirectory() + "/Whirlpool_Images/";
+    public static final String BACKUP_PATH = Environment.getExternalStorageDirectory() + "/WHIRLPOOL_backup/";
 
     public static final String PLS_FILL_DATA = "Please fill the data";
 
@@ -1000,6 +1001,8 @@ public class CommonString1 {
     public static final String Key_NAME = "NAME";
     public static final String KEY_PRESENT = "PRESENT";
     public static final String KEY_COMMMON_ID = "COMMONID";
+    public static final String KEY_DEPLOYMENT_CD="DEPLOYMENT_CD";
+    public static final String KEY_WHIRLPOOL_SKU="WHIRLPOOL_SKU";
 
     public static final String CREATE_TABLE_GATE_MEETING_MER = "CREATE TABLE "
             + TABLE_GATE_MER_DETAIL + " (" + KEY_ID
@@ -1083,6 +1086,7 @@ public class CommonString1 {
             + METHOD_NAME_UNIVERSAL_DOWNLOAD;
 
 
+
     public static final String CREATE_TABLE_COVERAGE_DATA = "CREATE TABLE  IF NOT EXISTS "
             + TABLE_COVERAGE_DATA +
             " (" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
@@ -1097,6 +1101,8 @@ public class CommonString1 {
             + KEY_IMAGE + " VARCHAR,"
             + KEY_GEO_TAG + " VARCHAR,"
             + KEY_REASON_ID + " INTEGER,"
+            + KEY_DEPLOYMENT_CD + " VARCHAR,"
+            + KEY_WHIRLPOOL_SKU + " VARCHAR,"
             + KEY_COVERAGE_REMARK + " VARCHAR,"
             + KEY_REASON + " VARCHAR,"
             + KEY_CITY + " VARCHAR" +

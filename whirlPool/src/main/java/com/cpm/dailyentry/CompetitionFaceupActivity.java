@@ -47,31 +47,15 @@ import java.util.List;
 public class CompetitionFaceupActivity extends AppCompatActivity implements View.OnClickListener{
 
     boolean checkflag=true;
-
     static int currentapiVersion = 1;
-
     Button btnsave;
-    //ListView lv;
     ExpandableListView expListView;
-
-    //Spinner spin;
-    private ArrayAdapter<CharSequence> dfAdapter;
     ArrayList<FacingCompetitorGetterSetter> facingcomplist=new ArrayList<FacingCompetitorGetterSetter>();
     ArrayList<FacingCompetitorGetterSetter> categorylist=new ArrayList<FacingCompetitorGetterSetter>();
-    //ArrayList<String> dflist=new ArrayList<String>();
-    ArrayList<String> statuslist=new ArrayList<String>();
-
-    //EditText etremarkone;
-    //LinearLayout lv_layout;
-
     GSKDatabase db;
-
     int listsize=0;
-
     private SharedPreferences preferences;
-    String store_cd;
-
-    String visit_date,username,intime;
+    String visit_date,username,intime,store_cd;
 
     CustomKeyboardView mKeyboardView;
     Keyboard mKeyboard;

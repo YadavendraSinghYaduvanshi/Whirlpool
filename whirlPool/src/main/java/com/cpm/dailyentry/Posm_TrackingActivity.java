@@ -37,6 +37,7 @@ import android.widget.TextView;
 import com.cpm.Constants.CommonFunctions;
 import com.cpm.Constants.CommonString1;
 import com.cpm.database.GSKDatabase;
+import com.cpm.delegates.CoverageBean;
 import com.cpm.whirlpool.R;
 import com.cpm.xmlGetterSetter.POSM_MASTER_DataGetterSetter;
 
@@ -66,6 +67,7 @@ public class Posm_TrackingActivity extends AppCompatActivity {
     String store_cd, visit_date, username;
     private SharedPreferences preferences;
     POSM_MASTER_DataGetterSetter cameraData;
+    CoverageBean coverage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,20 +75,15 @@ public class Posm_TrackingActivity extends AppCompatActivity {
         try {
             setContentView(R.layout.activity_posm_tracking);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
             expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
-
             camera1 = (ImageView) findViewById(R.id.img_camera1);
             camera2 = (ImageView) findViewById(R.id.img_camera2);
             camera3 = (ImageView) findViewById(R.id.img_camera3);
-
             lin_camera1 = (LinearLayout) findViewById(R.id.lin_camera1);
             lin_camera2 = (LinearLayout) findViewById(R.id.lin_camera2);
             lin_camera3 = (LinearLayout) findViewById(R.id.lin_camera3);
-
             db = new GSKDatabase(this);
             db.open();
-
             //preference data
             preferences = PreferenceManager.getDefaultSharedPreferences(this);
             store_cd = preferences.getString(CommonString1.KEY_STORE_CD, null);
@@ -115,23 +112,13 @@ public class Posm_TrackingActivity extends AppCompatActivity {
                                 .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         db.open();
-                                        //Camera data
-                                        if (db.isStorewiseCameraSave(store_cd, category_cd)) {
-                                            db.updateStore_wise_camera(cameraData);
-                                        } else {
-                                            cameraData.setCheckSaveStatus("1");
-                                            db.InsertStore_wise_camera(cameraData);
-                                        }
-                                        //Data
-                                        if (db.checkPOSMCategoryData(store_cd, category_cd)) {
-                                            db.updatePOSMCategoryData(store_cd, category_cd, hashMapListHeaderData, hashMapListChildData);
-                                            Snackbar.make(view, getResources().getString(R.string.update_message), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                                        } else {
-                                            db.InsertPOSMCategoryData(store_cd, category_cd, hashMapListHeaderData, hashMapListChildData);
-                                            Snackbar.make(view, getResources().getString(R.string.save_message), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                                        }
-                                        finish();
+                                        cameraData.setCheckSaveStatus("1");
+                                        db.InsertStore_wise_camera(cameraData);
+                                        db.InsertPOSMCategoryData(store_cd, category_cd, hashMapListHeaderData, hashMapListChildData);
+                                        Snackbar.make(view, getResources().getString(R.string.save_message), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                                        // }
                                         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+                                        finish();
                                     }
                                 })
                                 .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
@@ -245,7 +232,6 @@ public class Posm_TrackingActivity extends AppCompatActivity {
 
     private void cameraMethod() {
         cameraData = new POSM_MASTER_DataGetterSetter();
-
         if (db.isStorewiseCameraSave(store_cd, category_cd)) {
             cameraData = db.getStore_wise_camera(store_cd, category_cd);
         } else {
@@ -310,24 +296,30 @@ public class Posm_TrackingActivity extends AppCompatActivity {
         try {
             hashMapListHeaderData = new ArrayList<>();
             hashMapListChildData = new HashMap<>();
-
             //Header
-            headerDataList = db.getPOSMCategoryHeaderData(category_cd);
+            coverage = db.getCoverageWhirlpoolSkuData(visit_date,store_cd);
+
+            // here whirlpool_sku used for decided to show competition data
+            // if whirlpool_sku = 1 then  show competition data
+            // if whirlpool_sku = 0 then  hide competition data
+
+            if(coverage.getWhirlpool_sku().equalsIgnoreCase("1")){
+                headerDataList = db.getPOSMCategoryHeaderData(category_cd);
+            }else{
+                headerDataList = db.getPOSMCategoryHeaderWithoutCompetitorData(category_cd);
+            }
 
             if (headerDataList.size() > 0) {
                 for (int i = 0; i < headerDataList.size(); i++) {
                     hashMapListHeaderData.add(headerDataList.get(i));
-
                     //childDataList = new ArrayList<>();
                     childDataList = db.getPOSMCategoryData_AfterSaveData(store_cd, category_cd, headerDataList.get(i).getpSub_Category_cd());
                     if (!(childDataList.size() > 0)) {
                         childDataList = db.getPOSMCategoryChildData(category_cd, headerDataList.get(i).getpSub_Category_cd());
                     }
-
                     hashMapListChildData.put(hashMapListHeaderData.get(i), childDataList);
                 }
             }
-
             adapter = new ExpandableListAdapter(this, hashMapListHeaderData, hashMapListChildData);
             expandableListView.setAdapter(adapter);
         } catch (Exception e) {
@@ -369,8 +361,8 @@ public class Posm_TrackingActivity extends AppCompatActivity {
             builder.setMessage(getResources().getString(R.string.data_will_be_lost)).setCancelable(false)
                     .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            finish();
                             overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+                            finish();
                         }
                     })
                     .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
@@ -393,8 +385,8 @@ public class Posm_TrackingActivity extends AppCompatActivity {
         builder.setMessage(getResources().getString(R.string.data_will_be_lost)).setCancelable(false)
                 .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        finish();
                         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+                        finish();
                     }
                 })
                 .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
@@ -412,8 +404,7 @@ public class Posm_TrackingActivity extends AppCompatActivity {
         private List<POSM_MASTER_DataGetterSetter> _listDataHeader;
         private HashMap<POSM_MASTER_DataGetterSetter, List<POSM_MASTER_DataGetterSetter>> _listDataChild;
 
-        public ExpandableListAdapter(Context context, List<POSM_MASTER_DataGetterSetter> listDataHeader,
-                                     HashMap<POSM_MASTER_DataGetterSetter, List<POSM_MASTER_DataGetterSetter>> listChildData) {
+        public ExpandableListAdapter(Context context, List<POSM_MASTER_DataGetterSetter> listDataHeader, HashMap<POSM_MASTER_DataGetterSetter, List<POSM_MASTER_DataGetterSetter>> listChildData) {
             this._context = context;
             this._listDataHeader = listDataHeader;
             this._listDataChild = listChildData;
@@ -437,7 +428,6 @@ public class Posm_TrackingActivity extends AppCompatActivity {
         @Override
         public View getGroupView(final int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             POSM_MASTER_DataGetterSetter headerTitle = (POSM_MASTER_DataGetterSetter) getGroup(groupPosition);
-
             if (convertView == null) {
                 LayoutInflater infalInflater = (LayoutInflater) this._context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = infalInflater.inflate(R.layout.item_posm_tracking_header, null, false);
@@ -478,7 +468,7 @@ public class Posm_TrackingActivity extends AppCompatActivity {
                 holder.cardView = (CardView) convertView.findViewById(R.id.card_view);
                 holder.lin_category = (LinearLayout) convertView.findViewById(R.id.lin_category);
                 holder.txt_posmName = (TextView) convertView.findViewById(R.id.txt_posmName);
-                holder.ed_old = (EditText) convertView.findViewById(R.id.ed_old);
+                // holder.ed_old = (EditText) convertView.findViewById(R.id.ed_old);
                 holder.ed_new = (EditText) convertView.findViewById(R.id.ed_new);
 
                 convertView.setTag(holder);
@@ -487,24 +477,6 @@ public class Posm_TrackingActivity extends AppCompatActivity {
             }
 
             holder.txt_posmName.setText(childData.getPosm() + " - " + childData.getpSub_Category());
-
-            holder.ed_old.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    final EditText caption = (EditText) v;
-                    String ed_Old = caption.getText().toString();
-
-                    if (!ed_Old.equals("")) {
-                        String oldValue = ed_Old.replaceFirst("^0+(?!$)", "");
-
-                        childData.setOldValue(oldValue);
-                    } else {
-                        childData.setOldValue("");
-                    }
-                }
-            });
-            holder.ed_old.setText(childData.getOldValue());
-
 
             holder.ed_new.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
@@ -522,6 +494,7 @@ public class Posm_TrackingActivity extends AppCompatActivity {
 
                 }
             });
+            childData.setOldValue("0");
             holder.ed_new.setText(childData.getNewValue());
             return convertView;
         }
@@ -541,7 +514,7 @@ public class Posm_TrackingActivity extends AppCompatActivity {
         CardView cardView;
         TextView txt_posmName;
         LinearLayout lin_category;
-        EditText ed_old, ed_new;
+        EditText /*ed_old,*/ ed_new;
     }
 
     public String getCurrentTime() {
@@ -565,12 +538,10 @@ public class Posm_TrackingActivity extends AppCompatActivity {
                             img1 = _pathforcheck;
                             adapter.notifyDataSetChanged();
                             _pathforcheck = "";
-
                             if (!img1.equalsIgnoreCase("")) {
                                 cameraData.setImage1(img1);
                                 img1 = "";
                             }
-
                             if (cameraData.getImage1().equals("")) {
                                 camera1.setBackgroundResource(R.mipmap.camera_orange);
                             } else {

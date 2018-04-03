@@ -33,7 +33,6 @@ import android.widget.Toast;
 import com.cpm.Constants.CommonString1;
 import com.cpm.autoupdate.AutoupdateActivity;
 import com.cpm.database.GSKDatabase;
-import com.cpm.delegates.CoverageBean;
 import com.cpm.message.AlertMessage;
 import com.cpm.xmlGetterSetter.FailureGetterSetter;
 import com.cpm.xmlGetterSetter.LoginGetterSetter;
@@ -52,7 +51,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -60,8 +58,6 @@ public class LoginActivity extends Activity implements OnClickListener, Location
     private EditText mUsername, mPassword;
     TextView versioname;
     private Button mLogin;
-    // private RelativeLayout login_remember;
-    // private ImageView login_remembericon;
     private String username, password, p_username, p_password;
     private double latitude = 0.0, longitude = 0.0;
     private int versionCode;
@@ -73,11 +69,9 @@ public class LoginActivity extends Activity implements OnClickListener, Location
     private Intent intent = null;
     GSKDatabase database;
     static int counter = 1;
-    // TextView login_version;
     String app_ver;
     int eventType;
     LoginGetterSetter lgs = null;
-    private ArrayList<CoverageBean> coverageBeanlist = new ArrayList<CoverageBean>();
     private QuestionGetterSetter questionGetterSetter;
     boolean enabled;
     String right_answer, rigth_answer_cd = "", qns_cd, ans_cd;
@@ -87,44 +81,26 @@ public class LoginActivity extends Activity implements OnClickListener, Location
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         ContentResolver.setMasterSyncAutomatically(false);
-
-        // login_version = (TextView) findViewById(R.id.login_versiontext);
-
         mUsername = (EditText) findViewById(R.id.login_usertextbox);
         mPassword = (EditText) findViewById(R.id.login_locktextbox);
-
         versioname = (TextView) findViewById(R.id.version);
         mLogin = (Button) findViewById(R.id.login_loginbtn);
-
-        // login_remember = (RelativeLayout)
-        // findViewById(R.id.login_rememberme);
-        // login_remembericon = (ImageView)
         // findViewById(R.id.login_remembermeicon);
-
         mUsername.setText("testmer");
         mPassword.setText("cpm123");
         /*mUsername.setText("sunil.jai");
         mPassword.setText("cpm123");*/
-
         /*mUsername.setText("bilal");
         mPassword.setText("cpm123");*/
-
-        /*mUsername.setText("elango.coim");
+       /* mUsername.setText("emp.pune2");
         mPassword.setText("cpm123");*/
-
-        /*mUsername.setText("govinda");
-        mPassword.setText("cpm123");*/
-
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-
         editor = preferences.edit();
         p_username = preferences.getString(CommonString1.KEY_USERNAME, null);
         p_password = preferences.getString(CommonString1.KEY_PASSWORD, null);
         isChecked = preferences.getBoolean(CommonString1.KEY_REMEMBER, false);
-
         try {
             app_ver = String.valueOf(getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
-
             versioname.setText("Version " + app_ver);
         } catch (NameNotFoundException e) {
             // TODO Auto-generated catch block
@@ -132,96 +108,67 @@ public class LoginActivity extends Activity implements OnClickListener, Location
         }
 
         database = new GSKDatabase(this);
-//		database.open();
-
         if (!isChecked) {
-            // login_remembericon.setImageResource(R.drawable.deactive_radio_box);
         } else {
             mUsername.setText(p_username);
             mPassword.setText(p_password);
         }
 
         mLogin.setOnClickListener(this);
-        // login_remember.setOnClickListener(this);
-
         locmanager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         enabled = locmanager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-
         // Check if enabled and if not send user to the GSP settings
         // Better solution would be to display a dialog and suggesting to
         // go to the settings
         if (!enabled) {
-
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(
-                    LoginActivity.this);
-
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(LoginActivity.this);
             // Setting Dialog Title
             alertDialog.setTitle("GPS IS DISABLED...");
-
             // Setting Dialog Message
             alertDialog.setMessage("Click ok to enable GPS.");
-
             // Setting Positive "Yes" Button
             alertDialog.setPositiveButton("YES",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-
-                            intent = new Intent(
-                                    Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                             startActivity(intent);
                         }
                     });
-
             // Setting Negative "NO" Button
             alertDialog.setNegativeButton("NO",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             // Write your code here to invoke NO event
-
                             dialog.cancel();
                         }
                     });
-
             // Showing Alert Message
             alertDialog.show();
-
         }
-
         // Create a Folder for Images
-        File file = new File(Environment.getExternalStorageDirectory(),
-                "Whirlpool_Images");
+        File file = new File(Environment.getExternalStorageDirectory(), "Whirlpool_Images");
         if (!file.isDirectory()) {
             file.mkdir();
         }
-
-        // mUsername.setText("testmer");
-        // mPassword.setText("cpm123");
     }
 
     @Override
     protected void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
-
-
+        locmanager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        enabled = locmanager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         if (!enabled) {
-
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(
-                    LoginActivity.this);
-
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(LoginActivity.this);
             // Setting Dialog Title
             alertDialog.setTitle("GPS IS DISABLED...");
-
             // Setting Dialog Message
             alertDialog.setMessage("Click ok to enable GPS.");
-
             // Setting Positive "Yes" Button
             alertDialog.setPositiveButton("YES",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-
-                            intent = new Intent(
-                                    Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                             startActivity(intent);
                         }
                     });
@@ -230,18 +177,12 @@ public class LoginActivity extends Activity implements OnClickListener, Location
             alertDialog.setNegativeButton("NO",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            // Write your code here to invoke NO event
-
                             dialog.cancel();
                         }
                     });
-
             // Showing Alert Message
             alertDialog.show();
-
         }
-
-
     }
 
     @Override
@@ -264,8 +205,8 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                 } else if (password.length() == 0) {
                     showToast("Please enter password");
                 } else {
-                    p_username = preferences.getString(CommonString1.KEY_USERNAME,null);
-                    p_password = preferences.getString(CommonString1.KEY_PASSWORD,null);
+                    p_username = preferences.getString(CommonString1.KEY_USERNAME, null);
+                    p_password = preferences.getString(CommonString1.KEY_PASSWORD, null);
 
                     // If no preferences are stored
                     if (p_username == null && p_password == null) {
@@ -295,7 +236,6 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                     }
                 }
                 break;
-
         }
     }
 
@@ -441,12 +381,10 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                         // PUT IN PREFERENCES
                         editor.putString(CommonString1.KEY_USERNAME, username);
                         editor.putString(CommonString1.KEY_PASSWORD, password);
-                        editor.putString(CommonString1.KEY_VERSION,
-                                lgs.getVERSION());
-
+                        editor.putString(CommonString1.KEY_VERSION, lgs.getVERSION());
                         editor.putString(CommonString1.KEY_PATH, lgs.getPATH());
-
                         editor.putString(CommonString1.KEY_DATE, lgs.getDATE());
+                        // editor.putString(CommonString1.KEY_DATE, "10/18/2017");
 
                         editor.putString(CommonString1.KEY_USER_TYPE, lgs.getRIGHTNAME());
 
@@ -461,10 +399,7 @@ public class LoginActivity extends Activity implements OnClickListener, Location
 
 
             } catch (MalformedURLException e) {
-
-                final AlertMessage message = new AlertMessage(
-                        LoginActivity.this, AlertMessage.MESSAGE_EXCEPTION,
-                        "acra_login", e);
+                final AlertMessage message = new AlertMessage(LoginActivity.this, AlertMessage.MESSAGE_EXCEPTION, "acra_login", e);
                 runOnUiThread(new Runnable() {
 
                     @Override
@@ -473,11 +408,8 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                         message.showMessage();
                     }
                 });
-
             } catch (IOException e) {
-                final AlertMessage message = new AlertMessage(
-                        LoginActivity.this,
-                        AlertMessage.MESSAGE_SOCKETEXCEPTION, "socket_login", e);
+                final AlertMessage message = new AlertMessage(LoginActivity.this, AlertMessage.MESSAGE_SOCKETEXCEPTION, "socket_login", e);
 
                 counter++;
                 runOnUiThread(new Runnable() {
@@ -521,7 +453,6 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                         Integer.toString(versionCode))) {
 
 
-
                     String visit_date = preferences.getString(CommonString1.KEY_DATE, "");
 
                     if (false) {
@@ -540,9 +471,7 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                         final Dialog dialog = new Dialog(LoginActivity.this);
                         dialog.setTitle("Todays Question");
                         dialog.setCancelable(false);
-                        //dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                         dialog.setContentView(R.layout.todays_question_layout);
-
                         ((TextView) dialog.findViewById(R.id.tv_qns)).setText(questionGetterSetter.getQuestion().get(0));
                         Button btnsubmit = (Button) dialog.findViewById(R.id.btnsubmit);
                         RadioGroup radioGroup = (RadioGroup) dialog.findViewById(R.id.radiogrp);
@@ -551,7 +480,6 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                             RadioButton rdbtn = new RadioButton(LoginActivity.this);
                             rdbtn.setId(i);
                             rdbtn.setText(questionGetterSetter.getAnswer().get(i));
-                            //ll.addView(rdbtn);
                             radioGroup.addView(rdbtn);
                         }
 
@@ -586,9 +514,7 @@ public class LoginActivity extends Activity implements OnClickListener, Location
                                     final Dialog ans_dialog = new Dialog(LoginActivity.this);
                                     ans_dialog.setTitle("Answer");
                                     ans_dialog.setCancelable(false);
-                                    //dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                     ans_dialog.setContentView(R.layout.show_answer_layout);
-
                                     ((TextView) ans_dialog.findViewById(R.id.tv_ans)).setText(ansisright);
                                     Button btnok = (Button) ans_dialog.findViewById(R.id.btnsubmit);
 

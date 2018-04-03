@@ -66,17 +66,21 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
     Spinner sp_filter;
     MyAdapter myAdapter;
     String cityItem = "", city = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.storelistlayout);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         lv = (ListView) findViewById(R.id.list);
         nodata_linear = (LinearLayout) findViewById(R.id.no_data_lay);
         parent_linear = (LinearLayout) findViewById(R.id.parent_linear);
         city_spin_layout = (LinearLayout) findViewById(R.id.city_spin_layout);
         sp_filter = (Spinner) findViewById(R.id.sp_filter);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         database = new GSKDatabase(this);
         database.open();
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -85,8 +89,7 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
         store_id = preferences.getString(CommonString1.KEY_STORE_CD, "");
         user_type = preferences.getString(CommonString1.KEY_USER_TYPE, null);
         editor = preferences.edit();
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Store List - " + date);
     }
 
     @Override
@@ -231,13 +234,10 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             ViewHolder holder = null;
-
             if (convertView == null) {
                 holder = new ViewHolder();
-
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = inflater.inflate(R.layout.storelistrow, null);
-
                 holder.storename = (TextView) convertView.findViewById(R.id.tvstorename);
                 holder.city = (TextView) convertView.findViewById(R.id.tvcity);
                 holder.keyaccount = (TextView) convertView.findViewById(R.id.tvkeyaccount);
@@ -254,41 +254,43 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
 
                 @Override
                 public void onClick(View v) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(DailyEntryScreen.this);
-                    builder.setMessage("Are you sure you want to Checkout")
-                            .setCancelable(false)
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
+                    if (CheckNetAvailability()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(DailyEntryScreen.this);
+                        builder.setMessage("Are you sure you want to Checkout")
+                                .setCancelable(false)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
 
-                                    if (CheckNetAvailability()) {
                                         Intent i = new Intent(DailyEntryScreen.this, CheckOutStoreActivity.class);
-                                        i.putExtra(CommonString1.KEY_STORE_CD,jcplist.get(position).getStore_cd().get(0));
+                                        i.putExtra(CommonString1.KEY_STORE_CD, jcplist.get(position).getStore_cd().get(0));
                                         startActivity(i);
-                                    } else {
-                                        Snackbar.make(lv, "No Network", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                                     }
-                                }
-                            })
-                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.cancel();
-                                }
-                            });
-                    AlertDialog alert = builder.create();
-                    alert.show();
+                                })
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        AlertDialog alert = builder.create();
+                        alert.show();
+                    } else {
+                        Snackbar.make(lv, "No Network", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+                    }
                 }
             });
 
             String storecd = jcplist.get(position).getStore_cd().get(0);
             ArrayList<CoverageBean> coverageBean = database.getCoverageSpecificData(storecd);
 
-            if (jcplist.get(position).getUploadStatus().get(0).equals(CommonString1.KEY_D)) {
+
+            if (jcplist.get(position).getUploadStatus().get(0).equals(CommonString1.KEY_U)) {
                 holder.img.setVisibility(View.VISIBLE);
                 holder.img.setBackgroundResource(R.drawable.store_uploaded);
                 holder.checkout.setVisibility(View.INVISIBLE);
                 holder.checkinclose.setVisibility(View.INVISIBLE);
-            } else if (preferences.getString(CommonString1.KEY_STOREVISITED_STATUS + storecd, "").equals("No")) {
-                holder.img.setBackgroundResource(R.drawable.leave_tick);
+            } else if (jcplist.get(position).getUploadStatus().get(0).equals(CommonString1.KEY_D)) {
+                holder.img.setVisibility(View.VISIBLE);
+                holder.img.setBackgroundResource(R.drawable.store_uploaded_d);
                 holder.checkout.setVisibility(View.INVISIBLE);
                 holder.checkinclose.setVisibility(View.INVISIBLE);
             } else if ((jcplist.get(position).getCheckOutStatus().get(0).equals(CommonString1.KEY_C))) {
@@ -314,7 +316,7 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
                     int i;
                     for (i = 0; i < coverage.size(); i++) {
                         if (coverage.get(i).getInTime() != null) {
-                            if (coverage.get(i).getOutTime() == null) {
+                            if (coverage.get(i).getOutTime().equals("")) {
                                 if (storecd.equals(coverage.get(i).getStoreId())) {
                                     holder.img.setVisibility(View.INVISIBLE);
                                     holder.checkout.setEnabled(false);
@@ -340,8 +342,6 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
             holder.storename.setText(jcplist.get(position).getStore_name().get(0));
             holder.city.setText(jcplist.get(position).getCity().get(0));
             holder.keyaccount.setText(jcplist.get(position).getKey_account().get(0));
-
-
             return convertView;
         }
 
@@ -352,6 +352,7 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
             Button checkout;
         }
     }
+
     @Override
     public void onBackPressed() {
         finish();
@@ -371,9 +372,11 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
         editor.putString(CommonString1.KEY_STORE_TYPE_CD, STORETYPE_CD);
         editor.putString(CommonString1.KEY_STATE_CD, STATE_CD);
         editor.commit();
-        if (upload_status.equals(CommonString1.KEY_D)) {
-            Snackbar.make(lv, "All Data Uploaded", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
-        } else if (((checkoutstatus.equals(CommonString1.KEY_C)))) {
+        if (upload_status.equals(CommonString1.KEY_U)) {
+            Snackbar.make(lv, " All Data Uploaded", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+        } else if (upload_status.equals(CommonString1.KEY_D)) {
+            Snackbar.make(lv, "Data Uploaded", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+        } else if (checkoutstatus.equals(CommonString1.KEY_C)) {
             Snackbar.make(lv, "Store already checked out", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
         } else if (preferences.getString(CommonString1.KEY_STOREVISITED_STATUS + store_cd, "").equals("No")) {
             Snackbar.make(lv, "Store Already Closed", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
@@ -387,7 +390,7 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
                     for (i = 0; i < coverage.size(); i++) {
                         if (coverage.get(i).getInTime() != null) {
 
-                            if (coverage.get(i).getOutTime() == null) {
+                            if (coverage.get(i).getOutTime().equals("")) {
                                 if (!store_cd.equals(coverage.get(i).getStoreId())) {
                                     Snackbar.make(lv, "Please checkout from current store", Snackbar.LENGTH_SHORT)
                                             .setAction("Action", null).show();
@@ -592,14 +595,9 @@ public class DailyEntryScreen extends AppCompatActivity implements OnItemClickLi
     }
 
     public boolean setcheckedmenthod(String store_cd) {
-
-
         for (int i = 0; i < coverage.size(); i++) {
-
-
             if (store_cd.equals(coverage.get(i).getStoreId())) {
-
-                if (coverage.get(i).getOutTime() != null) {
+                if (!coverage.get(i).getOutTime().equals("")) {
                     result_flag = true;
 
                     break;

@@ -25,6 +25,8 @@ import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -32,6 +34,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -71,12 +74,12 @@ public class LocationActivity extends AppCompatActivity
     protected static final String PHOTO_TAKEN = "photo_taken";
     LocationManager locationManager;
     Geocoder geocoder;
-    protected Button _buttonsave;
+    protected FloatingActionButton _buttonsave;
     public Camera camera;
     File file;
     protected ImageView _image;
     protected boolean _taken;
-    Button capture_1;
+    ImageView capture_1;
     public String text;
     public View view;
     Location location;
@@ -105,7 +108,7 @@ public class LocationActivity extends AppCompatActivity
     private static int UPDATE_INTERVAL = 1000; // 10 sec
     private static int FATEST_INTERVAL = 500; // 5 sec
     private static int DISPLACEMENT = 10; // 10 meters
-    Location mLastLocation;
+    Location mLastLocation = null;
     private SharedPreferences preferences = null;
     String currentdate;
     MarkerOptions markerOptions;
@@ -121,8 +124,8 @@ public class LocationActivity extends AppCompatActivity
         username = preferences.getString(CommonString1.KEY_USERNAME, null);
         intime = preferences.getString(CommonString1.KEY_STORE_IN_TIME, "");
         _image = (ImageView) findViewById(R.id.image);
-        _buttonsave = (Button) findViewById(R.id.savedetails);
-        capture_1 = (Button) findViewById(R.id.StoreFront);
+        _buttonsave = (FloatingActionButton) findViewById(R.id.savedetails);
+        capture_1 = (ImageView) findViewById(R.id.StoreFront);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -132,7 +135,7 @@ public class LocationActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
         GSKDatabase data1 = new GSKDatabase(getApplicationContext());
         data1.open();
-        storedetails = new ArrayList<Storenamebean>();
+        storedetails = new ArrayList<>();
         ImageView img = new ImageView(getApplicationContext());
         locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
         geocoder = new Geocoder(this);
@@ -141,25 +144,14 @@ public class LocationActivity extends AppCompatActivity
             // Building the GoogleApi client
             buildGoogleApiClient();
         }
-
-
         if (checkPlayServices()) {
             buildGoogleApiClient();
             createLocationRequest();
         }
 
-
-        if (!(storelatitude.equals("0")) && !(storelongitude.equals("0"))) {
-
-            int latiti = (int) (Double.parseDouble(storelatitude) * 1000000);
-            int longi = (int) (Double.parseDouble(storelongitude) * 1000000);
-
-
-        }
-        _pathforcheck = storeid + "front.jpg";
         _buttonsave.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                if (_pathforcheck != null) {
+                if (_pathforcheck != null &&!_pathforcheck.equals("")) {
                     if (!(storelatitude.equals("0")) && !(storelongitude.equals("0"))) {
                         lat = Double.parseDouble(storelatitude);
                         longitude = Double.parseDouble(storelongitude);
@@ -167,7 +159,6 @@ public class LocationActivity extends AppCompatActivity
                         lat = data.getLatitude();
                         longitude = data.getLongitude();
                     }
-
                     if (ImageUploadActivity.CheckGeotagImage(_pathforcheck)) {
                         status = "Y";
                         GSKDatabase data = new GSKDatabase(getApplicationContext());
@@ -175,47 +166,18 @@ public class LocationActivity extends AppCompatActivity
                         data.updateOutTime(status, store_cd, visit_date);
                         data.InsertStoregeotagging(storeid, lat, longitude, _pathforcheck, status);
                         data.close();
-                        if (isNetworkOnline() == true) {
+                        if (isNetworkOnline()) {
                             Intent intent2 = new Intent(LocationActivity.this, UploadGeotaggingActivity.class);
                             startActivity(intent2);
                             finish();
                         }
                     } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                        builder.setMessage("Please take Store Front image")
-                                .setCancelable(false)
-                                .setPositiveButton("OK",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(
-                                                    DialogInterface dialog, int id) {
-                                                dialog.cancel();
-                                            }
-                                        });
-                        AlertDialog alert = builder.create();
-                        alert.show();
-
+                        Snackbar.make(_buttonsave, "Please take Store Front image", Snackbar.LENGTH_LONG).show();
                     }
-
                 } else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(v
-                            .getContext());
-
-                    builder.setMessage("Please take Store Front image")
-                            .setCancelable(false)
-                            .setPositiveButton("OK",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(
-                                                DialogInterface dialog, int id) {
-                                            dialog.cancel();
-                                        }
-                                    });
-                    AlertDialog alert = builder.create();
-                    alert.show();
+                    Snackbar.make(_buttonsave, "Please take Store Front image", Snackbar.LENGTH_LONG).show();
                 }
-
-
             }
-
         });
         capture_1.setOnClickListener(new ButtonClickHandler());
         locmanager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -247,7 +209,7 @@ public class LocationActivity extends AppCompatActivity
             alertDialog.show();
         }
     }
-
+/*
     @Override
     protected void onResume() {
         // TODO Auto-generated method stub
@@ -255,7 +217,7 @@ public class LocationActivity extends AppCompatActivity
         if (ImageUploadActivity.CheckGeotagImage(_pathforcheck)) {
             capture_1.setBackgroundResource(R.mipmap.camera_green);
         }
-    }
+    }*/
 
     protected void startCameraActivity() {
         Log.i("MakeMachine", "startCameraActivity()");
@@ -265,6 +227,7 @@ public class LocationActivity extends AppCompatActivity
         intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
         startActivityForResult(intent, 0);
     }
+
     public boolean isNetworkOnline() {
         boolean status = false;
         try {
@@ -283,6 +246,7 @@ public class LocationActivity extends AppCompatActivity
         }
         return status;
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.i("MakeMachine", "resultCode: " + resultCode);
@@ -293,7 +257,7 @@ public class LocationActivity extends AppCompatActivity
             case -1:
                 onPhotoTaken();
                 if (ImageUploadActivity.CheckGeotagImage(_pathforcheck)) {
-                    capture_1.setBackgroundResource(R.mipmap.camera_green);
+                    capture_1.setImageResource(R.mipmap.camera_green);
                 }
                 break;
         }
@@ -304,9 +268,9 @@ public class LocationActivity extends AppCompatActivity
         _taken = true;
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 8;
-
     }
 
+/*
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         Log.i("MakeMachine", "onRestoreInstanceState()");
@@ -322,19 +286,24 @@ public class LocationActivity extends AppCompatActivity
         }
 
     }
+*/
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putBoolean(PHOTO_TAKEN, _taken);
     }
 
+
     public class ButtonClickHandler implements OnClickListener {
         LocationActivity loc = new LocationActivity();
+
         public void onClick(View view) {
+           // _pathforcheck = storeid + "front.jpg";
             if (!(storelatitude.equals("0")) && !(storelongitude.equals("0"))) {
                 if (view.getId() == R.id.StoreFront) {
                     diskpath = CommonString1.FILE_PATH + storeid + "front.jpg";
                     _path = storeid + "front.jpg";
+                    _pathforcheck=_path;
                     Log.i("MakeMachine", "ButtonClickHandler.onClick()");
                     abc = 03;
                     startCameraActivity();
@@ -352,20 +321,14 @@ public class LocationActivity extends AppCompatActivity
                 alert.show();
             } else {
                 if (view.getId() == R.id.StoreFront) {
-
                     diskpath = CommonString1.FILE_PATH + storeid + "front.jpg";
                     _path = storeid + "front.jpg";
-
+                    _pathforcheck=_path;
                     Log.i("MakeMachine", "ButtonClickHandler.onClick()");
-
                     abc = 03;
-
                     startCameraActivity();
-
                 }
-
             }
-
         }
     }
 
@@ -390,13 +353,14 @@ public class LocationActivity extends AppCompatActivity
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult arg0) {
         // TODO Auto-generated method stub
-
     }
 
     public void onConnected(Bundle bundle) {
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
             latLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            storelatitude = String.valueOf(mLastLocation.getLatitude());
+            storelongitude = String.valueOf(mLastLocation.getLongitude());
             markerOptions = new MarkerOptions();
             markerOptions.position(latLng);
             Geocoder geocoder = new Geocoder(this, Locale.getDefault());
@@ -413,6 +377,7 @@ public class LocationActivity extends AppCompatActivity
             }
             markerOptions.title(alladress);
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+            mMap.clear();
             currLocationMarker = mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
         }
@@ -421,30 +386,13 @@ public class LocationActivity extends AppCompatActivity
         mLocationRequest.setFastestInterval(3000); //3 seconds
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-        try {
-            // This gets a list of addresses
-            int latiti;
-            int longi;
-            if (!(storelatitude.equals("0")) && !(storelongitude.equals("0"))) {
-                latiti = (int) (Double.parseDouble(storelatitude) * 1000000);
-                longi = (int) (Double.parseDouble(storelongitude) * 1000000);
-
-            } else {
-                data.setLatitude((mLastLocation.getLatitude()));
-                data.setLongitude((mLastLocation.getLongitude()));
-                latiti = (int) (mLastLocation.getLatitude() * 1000000);
-                longi = (int) (mLastLocation.getLongitude() * 1000000);
-            }
-        } catch (Exception e) {
-            Log.e("LocateMe", "Could not get Geocoder data", e);
-        }
-
     }
 
     @Override
     public void onConnectionSuspended(int arg0) {
         // TODO Auto-generated method stub
     }
+
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
     }
@@ -473,7 +421,6 @@ public class LocationActivity extends AppCompatActivity
                 GooglePlayServicesUtil.getErrorDialog(resultCode, this, PLAY_SERVICES_RESOLUTION_REQUEST).show();
             } else {
                 Toast.makeText(getApplicationContext(), "This device is not supported.", Toast.LENGTH_LONG).show();
-                finish();
             }
             return false;
         }
@@ -489,7 +436,6 @@ public class LocationActivity extends AppCompatActivity
     }
 
     protected void onStart() {
-
         if (mGoogleApiClient != null) {
             mGoogleApiClient.connect();
         }
@@ -503,10 +449,12 @@ public class LocationActivity extends AppCompatActivity
         }
         super.onStop();
     }
+
     public void onBackPressed() {
         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
         finish();
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

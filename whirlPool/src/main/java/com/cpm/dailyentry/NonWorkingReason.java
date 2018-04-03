@@ -87,6 +87,7 @@ public class NonWorkingReason extends AppCompatActivity implements
         _UserId = preferences.getString(CommonString1.KEY_USERNAME, "");
         visit_date = preferences.getString(CommonString1.KEY_DATE, null);
         store_id = preferences.getString(CommonString1.KEY_STORE_CD, "");
+        setTitle("NonWorking - " +visit_date);
         database = new GSKDatabase(this);
         database.open();
         str = CommonString1.FILE_PATH;

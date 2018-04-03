@@ -2,67 +2,193 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\3b9fe61bb62d93bbfc0dddfe1268e4b2c3dfd9d6\output\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\11e7bdb28d7e8d0306ad433eb9a90c623c631626\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\classes_9cfe70a442aeac83e97598e889ffecdcd6e4f97e.jar" />
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f8075d86eff057f3973125ce0ff1099d2dc5f966\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\37114a92b09733590c9f0ff965b708862df47420\output\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\c25c693def0068527ac8fadfb259908467ef3186\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\classes_3f4e8393a44517aa6e44992f66cb11130d24c322.jar" />
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_790b642a8017d268f4d0a43eed3549285909dcd9\classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\12be01d9f06deb05c68c7322e02c7ca9f5f72fd4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_275e04ee39d05efda5107b7fadbc83b576a1e630\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\7100b1d8a5d92cb833d93ad805bb4efbc8871457\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ebe773c94f3829f9c5ae06411098967e72fde3ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\bd268c5463514695f399da01c5c3819b20f139ed\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ab5bb19c24612acce77a6cca318ba8f9f10586e7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\7e4cbd0d2ff84ba389660fd80f251ab7a145a1ff\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ea62b0436cd35667d9a2e7d5b658a146da89b63f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_7b197330210c40a68974c9e63882f102632fef74\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c5fcc79a91dd44012936344dd699e38f69a35b8e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\c257ef71dad57572ec0faea34c55fce1e0fd4368\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\classes_c81bdf6d02fea744354b2011621f4d7bd60be9f9.jar" />
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c81bdf6d02fea744354b2011621f4d7bd60be9f9\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\9aaf9d6078e2188d81dc725d53f5b78e1b02b382\output\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\classes_01845e55c5db101cff09bdf252430c66a8eadbdb.jar" />
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.2_ac5295073043e0f00d50d1d7a1bbeb2b81c7c426\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\77f486359ef793284992df2831504ed62c567aca\output\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\classes_8c2f32dec3cabab92694f624c14d5d441522292c.jar" />
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b955b65316be2c6d3fae3a203af3161981de0084\classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\33ffa30cdb4423b1e56869c1e39bf4ddd2fc984d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_85ef20011ab17118e903d3d7eb7c90d1644e39d2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\libs\acra-4.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7864f0ac6c74d84e465aa5449fa14408b0a1418f">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\2\acra-4.4.0_b097221b56d86628dbd1c44fddf8f908bbb2863c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_56525509ecaf1ea4379f3f8e971d1a1eece71d30\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\2.0.0-beta1\53b5be42d6cf719ac1431b9aa9a4d5ab78856148\retrofit-2.0.0-beta1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53b5be42d6cf719ac1431b9aa9a4d5ab78856148">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.0-beta1_f84a545900f72c389130b140696228f7c18d20b1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\616a4d7c9a7323de155a8cd790f634156a6b7add\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9a1032b00a09fda7bc07292268f9215b592feb6d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\77f486359ef793284992df2831504ed62c567aca\output\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_057ff3a609f1d598740631d4e687f804cdc1f9d5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\5abbaa800a30128336e8de8d905178eb4a06a7cd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_deab4fd5a9d86d9cff7189cd03a219ef0e7f3781\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_f8809dacf30ddd5982d1a1499d4618b2b2e4b99e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\f053b0cba06d6193f8af949cf7fffdb177e327bd\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\classes_a1bcb13c3c5bd812c8b3bb63ec410fd516456c2d.jar" />
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a1bcb13c3c5bd812c8b3bb63ec410fd516456c2d\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\java_jdk\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\77f486359ef793284992df2831504ed62c567aca\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_5e833c198c020cac2f0dffb154874d6aa174b9f5.jar" />
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8c2f32dec3cabab92694f624c14d5d441522292c\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -71,25 +197,187 @@
         optimize="true"
         revision="25.0.0"
         sha1="7864f0ac6c74d84e465aa5449fa14408b0a1418f">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\acra-4.4.0_b097221b56d86628dbd1c44fddf8f908bbb2863c.jar" />
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\release\acra-4.4.0_b097221b56d86628dbd1c44fddf8f908bbb2863c.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="F:\java_jdk\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\37114a92b09733590c9f0ff965b708862df47420\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_4341ca35e23ed2ae23b89ef0a4c0d0d79e30315d.jar" />
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3f4e8393a44517aa6e44992f66cb11130d24c322\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\77f486359ef793284992df2831504ed62c567aca\output\jars\libs\internal_impl-23.1.1.jar"
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\converter-gson\2.0.0-beta1\3de922cdbf9bb3a6f72f6b6b3327cfb348cf445a\converter-gson-2.0.0-beta1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_057ff3a609f1d598740631d4e687f804cdc1f9d5.jar" />
+        sha1="3de922cdbf9bb3a6f72f6b6b3327cfb348cf445a">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.0-beta1_81ab05e67ca19c0a77e58320b3affdf7dc3226a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\e06824087b938243d56484bdd6eaad3deb40a6aa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_766e9772b2efc8c0eb886cc422d15dcc8588d962\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\2e0035eeeffc28dc00e81002ec171e7c46cba524\output\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_556f198c907be4742a93d6b860c0b257e897694e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\95adb6c0327ee4572caf93edf85a302ef4060260\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_655ec9af48caf526b2f4fc3bda9bb8a0471634f0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b7d242e02f43e4b5e53e67fc94347f531cffd986\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\e289ccf6a3bb1b5e158f448717aa8783ffb3cf89\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7ca90c2da362551de4ee8f2b7eef87f9a9221696\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\libs\ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="224c93f1824fa17b96db7250c2e5e2703d45e052">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\2\ksoap2-android-assembly-3.0.0-jar-with-dependencies_881cb4099846344a0b9e63c01d44151a29916801\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\2bc11f4a3d4d5964f64d84c8b6c80071b7bce500\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_16bb0a8fa5179f15a78f658556607bac7ccdc04d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_63d6548c4688616742b0a95f99fbd07560b9ef0b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3d1e981551cc5b73437fd42dbe628d0df7641c36\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\a5d6840e7aac5bc4cf57c2507ddedd23ca9e17a9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fe89df0319082dcf1bffd267d7b89c814e006cd8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\e1df7ceb187b19d99ff6f8dfa656f6e528e5bd35\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d125b199a427e5cc8d4234f7d8673c9a27ef6336">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f02c8a6070ca356291f4d8168f8e2946047118fe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\25c0056a0b5ff4f91610bb656278032d3bcc54d0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f6faa1b7a6e06292979dde333db00f4d2bfa8a40\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.5.0_92283c8a584739b4e0f4514f76bcd3644e72969f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\f700636653b0e23af198d513a49a6de3cebcdd5c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_809c3fb6468b74b7e634a3c996c3b1994675a65f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\56447f9390dbed32f27751f0548826b50b4c4cf2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4c970b9d035ec63b69aacd84373c2f756c0f645b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\java_jdk\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_5e833c198c020cac2f0dffb154874d6aa174b9f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\5244498a0025924e052384574ccded096a21eb00\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0efc99f4bf54dbf533aac8b44ddb3bd72bbf6ca5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2d460426ec4521c28ed906b7b9da1fc94f6a6c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b2138cac6260f8f0f1afe679879066a52a92eb25\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -98,7 +386,25 @@
         optimize="true"
         revision="25.0.0"
         sha1="224c93f1824fa17b96db7250c2e5e2703d45e052">
-        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\debug\ksoap2-android-assembly-3.0.0-jar-with-dependencies_881cb4099846344a0b9e63c01d44151a29916801.jar" />
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\pre-dexed\release\ksoap2-android-assembly-3.0.0-jar-with-dependencies_881cb4099846344a0b9e63c01d44151a29916801.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\3b9fe61bb62d93bbfc0dddfe1268e4b2c3dfd9d6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9cfe70a442aeac83e97598e889ffecdcd6e4f97e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jeevanp.CPMIN.000\.android\build-cache\2e0035eeeffc28dc00e81002ec171e7c46cba524\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\build\intermediates\transforms\dex\debug\folders\1000\10\classes_17cfcbd2850228d6ea3f0b4241be70762e0fabb2\classes.dex" />
     </item>
 
 </items>

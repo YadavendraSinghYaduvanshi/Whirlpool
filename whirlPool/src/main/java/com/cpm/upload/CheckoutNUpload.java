@@ -56,10 +56,8 @@ public class CheckoutNUpload extends Activity {
     private String username, visit_date, date, prev_date;
     private Dialog dialog;
     private ProgressBar pb;
-    private TextView percentage, message;
+    private TextView percentage, message,tv_title;
     private Data data;
-    public static String currLatitude = "0.0";
-    public static String currLongitude = "0.0";
     String app_ver;
     String datacheck = "";
     String[] words;
@@ -79,7 +77,7 @@ public class CheckoutNUpload extends Activity {
     ArrayList<POSM_MASTER_DataGetterSetter> posmImageList = new ArrayList<>();
     DeploymentFormGetterSetter df = new DeploymentFormGetterSetter();
     ArrayList<GeotaggingBeans> geodata = new ArrayList<>();
-
+    String dialogvalue = "Uploading Data";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,8 +88,6 @@ public class CheckoutNUpload extends Activity {
         username = preferences.getString(CommonString1.KEY_USERNAME, "");
         app_ver = preferences.getString(CommonString1.KEY_VERSION, "");
         visit_date = preferences.getString(CommonString1.KEY_DATE, null);
-        currLatitude = preferences.getString(CommonString1.KEY_LATITUDE, "0.0");
-        currLongitude = preferences.getString(CommonString1.KEY_LONGITUDE, "0.0");
         Path = CommonString1.FILE_PATH;
         if (!isCheckoutDataExist()) {
             new UploadTask(this).execute();
@@ -104,21 +100,18 @@ public class CheckoutNUpload extends Activity {
         for (int i = 0; i < jcplist.size(); i++) {
             if (!jcplist.get(i).getVISIT_DATE().get(0).equals(visit_date)) {
                 prev_date = jcplist.get(i).getVISIT_DATE().get(0);
-                //  if (jcplist.get(i).getCheckOutStatus().get(0).equals(CommonString1.KEY_VALID)) {
                 coverageBean = database.getCoverageSpecificData(jcplist.get(i).getStore_cd().get(0));
                 if (coverageBean.size() > 0) {
                     if (coverageBean.get(0).getStatus().equals(CommonString1.KEY_VALID)) {
                         flag = true;
                         username = coverageBean.get(0).getUserId();
                         date = coverageBean.get(0).getVisitDate();
-                        new BackgroundTask(this).execute();
                         break;
                     }
-
                 }
-                //  }
             }
             if (flag) {
+                new BackgroundTask(this).execute();
                 break;
             }
         }
@@ -143,6 +136,7 @@ public class CheckoutNUpload extends Activity {
             pb = (ProgressBar) dialog.findViewById(R.id.progressBar1);
             percentage = (TextView) dialog.findViewById(R.id.percentage);
             message = (TextView) dialog.findViewById(R.id.message);
+            tv_title = (TextView) dialog.findViewById(R.id.tv_title);
         }
 
         @Override
@@ -161,6 +155,7 @@ public class CheckoutNUpload extends Activity {
                                 + "[LONGITUDE]" + coverageBeanlist.get(i).getLongitude() + "[/LONGITUDE]"
                                 + "[IN_TIME]" + coverageBeanlist.get(i).getInTime() + "[/IN_TIME]"
                                 + "[OUT_TIME]" + coverageBeanlist.get(i).getOutTime() + "[/OUT_TIME]"
+                                + "[deployment_cd ]" + coverageBeanlist.get(i).getDeployment_cd() + "[/deployment_cd ]"
                                 + "[UPLOAD_STATUS]" + "N" + "[/UPLOAD_STATUS]"
                                 + "[USER_ID]" + username + "[/USER_ID]"
                                 + "[IMAGE_URL]" + coverageBeanlist.get(i).getImage() + "[/IMAGE_URL]"
@@ -168,6 +163,7 @@ public class CheckoutNUpload extends Activity {
                                 + "[REASON_REMARK]" + coverageBeanlist.get(i).getRemark() + "[/REASON_REMARK]"
                                 + "[/USER_DATA]"
                                 + "[/DATA]";
+
 
                         SoapObject request = new SoapObject(CommonString1.NAMESPACE, CommonString1.METHOD_UPLOAD_DR_STORE_COVERAGE);
                         request.addProperty("onXML", onXML);
@@ -183,21 +179,34 @@ public class CheckoutNUpload extends Activity {
                         validity = (words[0]);
                         if (validity.equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
                             database.updateCoverageStatus(coverageBeanlist.get(i).getMID(), CommonString1.KEY_P);
-                            database.updateStoreStatusOnLeave(coverageBeanlist.get(i).getStoreId(), coverageBeanlist.get(i).getVisitDate(), CommonString1.KEY_P);
+                            database.updateStoreStatusOnLeave(coverageBeanlist.get(i).getStoreId(),
+                                    coverageBeanlist.get(i).getVisitDate(), CommonString1.KEY_P);
+                            coverageBeanlist.get(i).setStatus(CommonString1.KEY_P);
+                            final int finalI = i;
+                            runOnUiThread(new Runnable() {
+                                public void run() {
+                                    String value = "Upload Store Data " + (finalI + 1) + " of " + coverageBeanlist.size();
+                                    tv_title.setText(value);
+                                }
+                            });
                         } else {
                             isError = true;
                             continue;
+
                         }
                         mid = Integer.parseInt((words[1]));
                         data.value = 30;
+                        data.dialogname = dialogvalue;
                         data.name = "Uploading";
                         publishProgress(data);
+
+
                         String final_xml = "";
-
-
                         onXML = "";
+                        database.open();
                         posmTrackingList = database.getPOSMCategoryData_UploadData(coverageBeanlist.get(i).getStoreId());
                         if (posmTrackingList.size() > 0) {
+
                             for (int j = 0; j < posmTrackingList.size(); j++) {
                                 onXML = "[POSM_DATA_NEW]"
                                         + "[MID]" + mid + "[/MID]"
@@ -222,24 +231,28 @@ public class CheckoutNUpload extends Activity {
                             envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
                             envelope.dotNet = true;
                             envelope.setOutputSoapObject(request);
+
                             androidHttpTransport = new HttpTransportSE(CommonString1.URL);
                             androidHttpTransport.call(CommonString1.SOAP_ACTION + CommonString1.METHOD_UPLOAD_XML, envelope);
+
                             result = envelope.getResponse();
+
                             if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
                                 isError = true;
                             }
-                            data.value = 50;
+                            data.value = 40;
                             data.name = "POSM_DATA_NEW";
+                            data.dialogname = dialogvalue;
                             publishProgress(data);
-
                         }
+
 
                         //StoreWise POSM Tracking Image Data
                         String imagefinal_xml = "";
                         onXML = "";
+                        database.open();
                         posmImageList = database.getPOSMImage_UploadData(coverageBeanlist.get(i).getStoreId());
                         if (posmImageList.size() > 0) {
-
                             for (int j = 0; j < posmImageList.size(); j++) {
                                 onXML = "[POSM_IMAGE_DATA]"
                                         + "[MID]" + mid + "[/MID]"
@@ -255,6 +268,7 @@ public class CheckoutNUpload extends Activity {
                             }
 
                             final String sos_xml = "[DATA]" + imagefinal_xml + "[/DATA]";
+
                             request = new SoapObject(CommonString1.NAMESPACE, CommonString1.METHOD_UPLOAD_XML);
                             request.addProperty("XMLDATA", sos_xml);
                             request.addProperty("KEYS", "POSM_IMAGE_DATA");
@@ -269,14 +283,16 @@ public class CheckoutNUpload extends Activity {
                             if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
                                 isError = true;
                             }
-                            data.value = 60;
+                            data.value = 50;
                             data.name = "POSM_IMAGE_DATA";
+                            data.dialogname = dialogvalue;
                             publishProgress(data);
                         }
 
                         //Deployment form data
                         imagefinal_xml = "";
                         onXML = "";
+                        database.open();
                         df = database.getdeploymentInsertedData(coverageBeanlist.get(i).getStoreId());
                         if (!df.getDf_img().equals("")) {
                             onXML = "[DEPLOYMENTFORM_DATA]"
@@ -287,6 +303,8 @@ public class CheckoutNUpload extends Activity {
                                     + "[/DEPLOYMENTFORM_DATA]";
 
                             imagefinal_xml = imagefinal_xml + onXML;
+
+
                             final String sos_xml = "[DATA]" + imagefinal_xml + "[/DATA]";
                             request = new SoapObject(CommonString1.NAMESPACE, CommonString1.METHOD_UPLOAD_XML);
                             request.addProperty("XMLDATA", sos_xml);
@@ -302,213 +320,266 @@ public class CheckoutNUpload extends Activity {
                             if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
                                 isError = true;
                             }
-                            data.value = 67;
+                            data.value = 60;
                             data.name = "DEPLOYMENTFORM_DATA";
+                            data.dialogname = dialogvalue;
                             publishProgress(data);
                         }
 
+                        database.open();
                         geodata = database.getGeotaggingData(coverageBeanlist.get(i).getStoreId());
                         if (geodata.size() > 0) {
                             final_xml = "";
                             onXML = "";
                             for (int i1 = 0; i1 < geodata.size(); i1++) {
-                                if (!geodata.get(i1).getGEO_TAG().equals("Y")) {
-                                    onXML = "[DATA][USER_DATA][STORE_ID]"
-                                            + Integer.parseInt(geodata.get(i1).getStoreId())
-                                            + "[/STORE_ID]"
-                                            + "[USERNAME]"
-                                            + username
-                                            + "[/USERNAME]"
-                                            + "[Image1]"
-                                            + geodata.get(i1).getUrl1()
-                                            + "[/Image1][Latitude]"
-                                            + Double.toString(geodata.get(i1).getLatitude())
-                                            + "[/Latitude][Longitude]"
-                                            + Double.toString(geodata.get(i1).getLongitude())
-                                            + "[/Longitude][/USER_DATA][/DATA]";
-                                    final_xml = onXML;
-                                    request = new SoapObject(CommonString.NAMESPACE, CommonString1.METHOD_UPLOAD_XML);
-                                    request.addProperty("XMLDATA", final_xml);
-                                    request.addProperty("KEYS", "GeoXML");
-                                    request.addProperty("USERNAME", username);
-                                    envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-                                    envelope.dotNet = true;
-                                    envelope.setOutputSoapObject(request);
-                                    androidHttpTransport = new HttpTransportSE(CommonString1.URL);
-                                    androidHttpTransport.call(CommonString.NAMESPACE + CommonString1.METHOD_UPLOAD_XML, envelope);
-                                    result = (Object) envelope.getResponse();
-                                    if (result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
-                                    } else {
-                                        isError = true;
-                                    }
-                                }
-                            }
-                        }
-
-                        //Deployment image
-                        if (!df.getDf_img().equals("")) {
-                            if (new File(CommonString1.FILE_PATH + df.getDf_img()).exists()) {
-                                result = UploadImage(df.getDf_img(), "deploymentform");
-                                if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                onXML = "[DATA][USER_DATA][STORE_ID]"
+                                        + Integer.parseInt(geodata.get(i1).getStoreId())
+                                        + "[/STORE_ID]"
+                                        + "[USERNAME]"
+                                        + username
+                                        + "[/USERNAME]"
+                                        + "[Image1]"
+                                        + geodata.get(i1).getUrl1()
+                                        + "[/Image1][Latitude]"
+                                        + Double.toString(geodata.get(i1).getLatitude())
+                                        + "[/Latitude][Longitude]"
+                                        + Double.toString(geodata.get(i1).getLongitude())
+                                        + "[/Longitude][/USER_DATA][/DATA]";
+                                final_xml = onXML;
+                                request = new SoapObject(CommonString.NAMESPACE, CommonString1.METHOD_UPLOAD_XML);
+                                request.addProperty("XMLDATA", final_xml);
+                                request.addProperty("KEYS", "GeoXML");
+                                request.addProperty("USERNAME", username);
+                                envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                                envelope.dotNet = true;
+                                envelope.setOutputSoapObject(request);
+                                androidHttpTransport = new HttpTransportSE(CommonString1.URL);
+                                androidHttpTransport.call(CommonString.NAMESPACE + CommonString1.METHOD_UPLOAD_XML, envelope);
+                                result = (Object) envelope.getResponse();
+                                if (result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                } else {
                                     isError = true;
                                 }
-                                runOnUiThread(new Runnable() {
-                                    public void run() {
-                                        message.setText("deploymentform Image Uploaded");
-                                    }
-                                });
                             }
 
                             data.value = 70;
-                            data.name = "deploymentform image";
+                            data.name = "GeoXML data";
+                            data.dialogname = dialogvalue;
                             publishProgress(data);
+
                         }
 
-                        //Store Image
-                        if (coverageBeanlist.get(i).getImage() != null && !coverageBeanlist.get(i).getImage().equals("")) {
-                            if (new File(CommonString1.FILE_PATH + coverageBeanlist.get(i).getImage()).exists()) {
-                                result = UploadImage(coverageBeanlist.get(i).getImage(), "StoreImages");
+                        final_xml = "";
+                        onXML = "";
+                        if (!isError) {
+                            onXML = "[COVERAGE_STATUS]"
+                                    + "[STORE_ID]" + coverageBeanlist.get(i).getStoreId() + "[/STORE_ID]"
+                                    + "[VISIT_DATE]" + coverageBeanlist.get(i).getVisitDate() + "[/VISIT_DATE]"
+                                    + "[USER_ID]" + coverageBeanlist.get(i).getUserId() + "[/USER_ID]"
+                                    + "[STATUS]" + CommonString1.KEY_D + "[/STATUS]"
+                                    + "[/COVERAGE_STATUS]";
+
+                            final_xml = final_xml + onXML;
+                            final String sos_xml = "[DATA]" + final_xml + "[/DATA]";
+                            SoapObject request1 = new SoapObject(CommonString1.NAMESPACE, CommonString1
+                                    .MEHTOD_UPLOAD_COVERAGE_STATUS);
+                            request1.addProperty("onXML", sos_xml);
+                            SoapSerializationEnvelope envelope1 = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                            envelope1.dotNet = true;
+                            envelope1.setOutputSoapObject(request1);
+                            HttpTransportSE androidHttpTransport1 = new HttpTransportSE(CommonString1.URL);
+                            androidHttpTransport1.call(CommonString1.SOAP_ACTION +
+                                    CommonString1.MEHTOD_UPLOAD_COVERAGE_STATUS, envelope1);
+                            Object result1 = envelope1.getResponse();
+                            if (result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                database.open();
+                                database.updateCoverageStatus(coverageBeanlist.get(i).getMID(), CommonString1.KEY_D);
+                                database.updateStoreStatusOnLeave(coverageBeanlist.get(i).getStoreId(),
+                                        coverageBeanlist.get(i).getVisitDate(), CommonString1.KEY_D);
+                                coverageBeanlist.get(i).setStatus(CommonString1.KEY_D);
+                            }
+                            if (!result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                isError = true;
+                                continue;
+                            }
+                            data.value = 75;
+                            data.name = "COVERAGE_STATUS";
+                            data.dialogname = "Update status";
+                            publishProgress(data);
+                            resultFinal = result1.toString();
+                        }
+
+                    }
+                }
+
+                File dir = new File(CommonString1.FILE_PATH);
+                ArrayList<String> list = new ArrayList();
+                list = getFileNames(dir.listFiles());
+                Object result;
+                if (list.size() > 0) {
+                    for (int i1 = 0; i1 < list.size(); i1++) {
+                        if (list.get(i1).contains("_STOREIMG_") || list.get(i1).contains("_NONWORKING_")) {
+                            if (new File(CommonString1.FILE_PATH + list.get(i1)).exists()) {
+                                File originalFile = new File(CommonString1.FILE_PATH + list.get(i1));
+                                result = UploadImage(originalFile.getName(), "StoreImages");
                                 if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
                                     isError = true;
                                 }
-
                                 runOnUiThread(new Runnable() {
                                     public void run() {
-                                        message.setText("Store Image Uploaded");
+                                        message.setText("StoreImages Uploaded");
                                     }
                                 });
+                                data.value = 80;
+                                data.dialogname = "Upload Images";
+                                data.name = "StoreImages";
+                                publishProgress(data);
                             }
-                        }
-                        data.value = 70;
-                        data.name = "StoreImages";
-                        publishProgress(data);
 
-                        //StoreWise POSM Tracking Image
-                        posmImageList = database.getPOSMImage_UploadData(coverageBeanlist.get(i).getStoreId());
-                        if (posmImageList.size() > 0) {
-                            for (int j = 0; j < posmImageList.size(); j++) {
-                                //Image 1
-                                if (posmImageList.get(j).getImage1() != null && !posmImageList.get(j).getImage1().equals("")) {
-                                    if (new File(CommonString1.FILE_PATH + posmImageList.get(j).getImage1()).exists()) {
-                                        result = UploadImage(posmImageList.get(j).getImage1(), "PosmImages");
-                                        if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
-                                            isError = true;
-                                        }
 
-                                        runOnUiThread(new Runnable() {
-                                            public void run() {
-                                                message.setText("Posm Images Uploaded");
-                                            }
-                                        });
-                                    }
+                        } else if (list.get(i1).contains("_Stock_Camera1_") || list.get(i1).contains("_Stock_Camera2_")
+                                || list.get(i1).contains("_Stock_Camera3_")) {
+                            if (new File(CommonString1.FILE_PATH + list.get(i1)).exists()) {
+                                File originalFile = new File(CommonString1.FILE_PATH + list.get(i1));
+                                result = UploadImage(originalFile.getName(), "PosmImages");
+                                if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                    isError = true;
                                 }
-                                //Image 2
-                                if (posmImageList.get(j).getImage2() != null && !posmImageList.get(j).getImage2().equals("")) {
-
-                                    if (new File(CommonString1.FILE_PATH + posmImageList.get(j).getImage2()).exists()) {
-
-                                        result = UploadImage(posmImageList.get(j).getImage2(), "PosmImages");
-
-                                        if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
-                                            //    return "PosmImages 2";
-                                            isError = true;
-                                        }
-
-                                        runOnUiThread(new Runnable() {
-                                            public void run() {
-                                                message.setText("Posm Images Uploaded");
-                                            }
-                                        });
+                                runOnUiThread(new Runnable() {
+                                    public void run() {
+                                        message.setText("PosmImages Uploaded");
                                     }
-                                }
-
-                                //Image 3
-                                if (posmImageList.get(j).getImage3() != null && !posmImageList.get(j).getImage3().equals("")) {
-
-                                    if (new File(CommonString1.FILE_PATH + posmImageList.get(j).getImage3()).exists()) {
-                                        result = UploadImage(posmImageList.get(j).getImage3(), "PosmImages");
-                                        if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
-                                            isError = true;
-                                        }
-
-                                        runOnUiThread(new Runnable() {
-                                            public void run() {
-                                                message.setText("Posm Images Uploaded");
-                                            }
-                                        });
-                                    }
-                                }
+                                });
+                                data.value = 90;
+                                data.dialogname = "Upload Images";
+                                data.name = "PosmImages";
+                                publishProgress(data);
                             }
-                            data.value = 80;
-                            data.name = "PosmImages";
-                            publishProgress(data);
-                        }
-                        if (geodata.size() > 0) {
-                            for (int k = 0; k < geodata.size(); k++) {
-                                if (geodata.get(k).getUrl1() != null && !geodata.get(k).getUrl1().equals("")) {
-                                    if (new File(CommonString1.FILE_PATH + geodata.get(k).getUrl1()).exists()) {
-                                        result = UploadImage(geodata.get(k).getUrl1(), "GeoTagImages");
-                                        if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
-                                            isError = true;
-                                        }
-                                        runOnUiThread(new Runnable() {
-                                            public void run() {
-                                                message.setText("GeoTagImages Uploaded");
-                                            }
-                                        });
-                                    }
+
+                        } else if (list.get(i1).contains("_DF_")) {
+                            if (new File(CommonString1.FILE_PATH + list.get(i1)).exists()) {
+                                File originalFile = new File(CommonString1.FILE_PATH + list.get(i1));
+                                result = UploadImage(originalFile.getName(), "deploymentform");
+                                if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                    isError = true;
                                 }
+                                runOnUiThread(new Runnable() {
+                                    public void run() {
+                                        message.setText("deploymentform Uploaded");
+                                    }
+                                });
+                                data.value = 95;
+                                data.dialogname = "Upload Images";
+                                data.name = "deploymentform";
+                                publishProgress(data);
                             }
-                            data.value = 85;
-                            data.name = "GeoTagImages";
-                            publishProgress(data);
+
+                        } else if (list.get(i1).contains("front")) {
+                            if (new File(CommonString1.FILE_PATH + list.get(i1)).exists()) {
+                                File originalFile = new File(CommonString1.FILE_PATH + list.get(i1));
+                                result = UploadImage(originalFile.getName(), "GeoTagImages");
+                                if (!result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                    isError = true;
+                                }
+                                runOnUiThread(new Runnable() {
+                                    public void run() {
+                                        message.setText("GeoTagImages Uploaded");
+                                    }
+                                });
+                                data.value = 98;
+                                data.dialogname = "Upload Images";
+                                data.name = "GeoTagImages";
+                                publishProgress(data);
+                            }
+
                         }
-
-
-                        // SET COVERAGE STATUS
-                        final_xml = "";
-                        onXML = "";
-                        onXML = "[COVERAGE_STATUS]"
-                                + "[STORE_ID]" + coverageBeanlist.get(i).getStoreId() + "[/STORE_ID]"
-                                + "[VISIT_DATE]" + coverageBeanlist.get(i).getVisitDate() + "[/VISIT_DATE]"
-                                + "[USER_ID]" + coverageBeanlist.get(i).getUserId() + "[/USER_ID]"
-                                + "[STATUS]" + CommonString1.KEY_D + "[/STATUS]"
-                                + "[/COVERAGE_STATUS]";
-
-                        final_xml = final_xml + onXML;
-
-                        final String sos_xml = "[DATA]" + final_xml + "[/DATA]";
-                        SoapObject request1 = new SoapObject(CommonString1.NAMESPACE, CommonString1.MEHTOD_UPLOAD_COVERAGE_STATUS);
-                        request1.addProperty("onXML", sos_xml);
-                        SoapSerializationEnvelope envelope1 = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-                        envelope1.dotNet = true;
-                        envelope1.setOutputSoapObject(request1);
-                        HttpTransportSE androidHttpTransport1 = new HttpTransportSE(CommonString1.URL);
-                        androidHttpTransport1.call(CommonString1.SOAP_ACTION + CommonString1.MEHTOD_UPLOAD_COVERAGE_STATUS, envelope1);
-                        Object result1 = envelope1.getResponse();
-
-                        if (result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
-                            database.open();
-                            database.updateCoverageStatus(coverageBeanlist.get(i).getMID(), CommonString1.KEY_D);
-                            database.updateStoreStatusOnLeave(coverageBeanlist.get(i).getStoreId(), coverageBeanlist.get(i).getVisitDate(), CommonString1.KEY_D);
-                        }
-                        if (!result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
-                            isError = true;
-                        }
-                        data.value = 100;
-                        publishProgress(data);
-                        resultFinal = result.toString();
                     }
-                }
-                if (isError) {
-                    return AlertMessage.MESSAGE_EXCEPTION;
+                    // SET COVERAGE STATUS
+                    if (coverageBeanlist.size() > 0) {
+                        for (int i1 = 0; i1 < coverageBeanlist.size(); i1++) {
+                            if (coverageBeanlist.get(i1).getStatus().equals(CommonString1.KEY_D)) {
+                                String final_xml = "", onXML = "";
+                                onXML = "[COVERAGE_STATUS]"
+                                        + "[STORE_ID]" + coverageBeanlist.get(i1).getStoreId() + "[/STORE_ID]"
+                                        + "[VISIT_DATE]" + coverageBeanlist.get(i1).getVisitDate() + "[/VISIT_DATE]"
+                                        + "[USER_ID]" + coverageBeanlist.get(i1).getUserId() + "[/USER_ID]"
+                                        + "[STATUS]" + CommonString1.KEY_U + "[/STATUS]"
+                                        + "[/COVERAGE_STATUS]";
+
+                                final_xml = final_xml + onXML;
+                                final String sos_xml = "[DATA]" + final_xml + "[/DATA]";
+                                SoapObject request1 = new SoapObject(CommonString1.NAMESPACE, CommonString1.MEHTOD_UPLOAD_COVERAGE_STATUS);
+                                request1.addProperty("onXML", sos_xml);
+                                SoapSerializationEnvelope envelope1 = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                                envelope1.dotNet = true;
+                                envelope1.setOutputSoapObject(request1);
+                                HttpTransportSE androidHttpTransport1 = new HttpTransportSE(CommonString1.URL);
+                                androidHttpTransport1.call(CommonString1.SOAP_ACTION + CommonString1.MEHTOD_UPLOAD_COVERAGE_STATUS, envelope1);
+                                Object result1 = envelope1.getResponse();
+                                if (result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                    database.open();
+                                    database.updateCoverageStatus(coverageBeanlist.get(i1).getMID(), CommonString1.KEY_U);
+                                    database.updateStoreStatusOnLeave(coverageBeanlist.get(i1).getStoreId(),
+                                            coverageBeanlist.get(i1).getVisitDate(), CommonString1.KEY_U);
+                                    coverageBeanlist.get(i1).setStatus(CommonString1.KEY_U);
+                                    database.deleteSpecificStoreData(coverageBeanlist.get(i1).getStoreId());
+                                }
+                                if (!result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                    isError = true;
+                                }
+                                data.value = 100;
+                                data.dialogname = "Updated Status";
+                                data.name = "COVERAGE_STATUS";
+                                publishProgress(data);
+                                resultFinal = result1.toString();
+                            }
+                        }
+                    }
                 } else {
-                    return CommonString1.KEY_SUCCESS;
+                    if (coverageBeanlist.size() > 0) {
+                        for (int i1 = 0; i1 < coverageBeanlist.size(); i1++) {
+                            if (coverageBeanlist.get(i1).getStatus().equals(CommonString1.KEY_D)) {
+                                String final_xml = "", onXML = "";
+                                onXML = "[COVERAGE_STATUS]"
+                                        + "[STORE_ID]" + coverageBeanlist.get(i1).getStoreId() + "[/STORE_ID]"
+                                        + "[VISIT_DATE]" + coverageBeanlist.get(i1).getVisitDate() + "[/VISIT_DATE]"
+                                        + "[USER_ID]" + coverageBeanlist.get(i1).getUserId() + "[/USER_ID]"
+                                        + "[STATUS]" + CommonString1.KEY_U + "[/STATUS]"
+                                        + "[/COVERAGE_STATUS]";
+
+                                final_xml = final_xml + onXML;
+                                final String sos_xml = "[DATA]" + final_xml + "[/DATA]";
+                                SoapObject request1 = new SoapObject(CommonString1.NAMESPACE, CommonString1.MEHTOD_UPLOAD_COVERAGE_STATUS);
+                                request1.addProperty("onXML", sos_xml);
+                                SoapSerializationEnvelope envelope1 = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                                envelope1.dotNet = true;
+                                envelope1.setOutputSoapObject(request1);
+                                HttpTransportSE androidHttpTransport1 = new HttpTransportSE(CommonString1.URL);
+                                androidHttpTransport1.call(CommonString1.SOAP_ACTION + CommonString1.MEHTOD_UPLOAD_COVERAGE_STATUS, envelope1);
+                                Object result1 = envelope1.getResponse();
+                                if (result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                    database.open();
+                                    database.updateCoverageStatus(coverageBeanlist.get(i1).getMID(), CommonString1.KEY_U);
+                                    database.updateStoreStatusOnLeave(coverageBeanlist.get(i1).getStoreId(),
+                                            coverageBeanlist.get(i1).getVisitDate(), CommonString1.KEY_U);
+                                    coverageBeanlist.get(i1).setStatus(CommonString1.KEY_U);
+                                    database.deleteSpecificStoreData(coverageBeanlist.get(i1).getStoreId());
+                                }
+                                if (!result1.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS)) {
+                                    isError = true;
+                                }
+                                data.value = 100;
+                                data.name = "COVERAGE_STATUS";
+                                publishProgress(data);
+                                resultFinal = result1.toString();
+                            }
+                        }
+                    }
+
                 }
             } catch (MalformedURLException e) {
                 up_success_flag = false;
                 exceptionMessage = e.toString();
-
             } catch (IOException e) {
                 up_success_flag = false;
                 exceptionMessage = e.toString();
@@ -529,19 +600,25 @@ public class CheckoutNUpload extends Activity {
             pb.setProgress(values[0].value);
             percentage.setText(values[0].value + "%");
             message.setText(values[0].name);
+            tv_title.setText(values[0].dialogname);
         }
 
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             dialog.dismiss();
-            if (result.contains(CommonString1.KEY_SUCCESS)) {
-                AlertMessage message = new AlertMessage(CheckoutNUpload.this, AlertMessage.MESSAGE_UPLOAD_DATA, "success", null);
-                message.showMessage();
-                database.deleteAllTables();
+            if (isError) {
+                Toast.makeText(getApplicationContext(), "Uploaded Successfully with some problem ", Toast.LENGTH_SHORT).show();
             } else {
-                AlertMessage message = new AlertMessage(CheckoutNUpload.this, "Error in uploading :" + result, "success", null);
-                message.showMessage();
+                if (result.contains(CommonString1.KEY_SUCCESS)) {
+
+                    AlertMessage message = new AlertMessage(CheckoutNUpload.this, AlertMessage.MESSAGE_UPLOAD_DATA, "success", null);
+                    message.showMessage();
+
+                } else {
+                    AlertMessage message = new AlertMessage(CheckoutNUpload.this, "Error in uploading :" + result, "success", null);
+                    message.showMessage();
+                }
             }
         }
     }
@@ -585,13 +662,13 @@ public class CheckoutNUpload extends Activity {
                     Calendar cal = Calendar.getInstance();
                     cal.setTime(d);
                     cal.get(Calendar.HOUR_OF_DAY);
-                    cal.add(Calendar.MINUTE, 30);
+                    cal.add(Calendar.MINUTE, 2);
                     String out_time = df1.format(cal.getTime());
                     String onXML = "[STORE_CHECK_OUT_STATUS]"
                             + "[USER_ID]" + username + "[/USER_ID]"
                             + "[STORE_ID]" + coverageBean.get(0).getStoreId() + "[/STORE_ID]"
-                            + "[LATITUDE]" + coverageBean.get(0).getLatitude() + "[/LATITUDE]"
-                            + "[LOGITUDE]" + coverageBean.get(0).getLongitude() + "[/LOGITUDE]"
+                            + "[LATITUDE]" + "0.0" + "[/LATITUDE]"
+                            + "[LOGITUDE]" + "0.0" + "[/LOGITUDE]"
                             + "[CHECKOUT_DATE]" + coverageBean.get(0).getVisitDate() + "[/CHECKOUT_DATE]"
                             + "[CHECK_OUTTIME]" + out_time + "[/CHECK_OUTTIME]"
                             + "[CHECK_INTIME]" + coverageBean.get(0).getInTime() + "[/CHECK_INTIME]"
@@ -610,7 +687,8 @@ public class CheckoutNUpload extends Activity {
                     if (result.toString().equalsIgnoreCase(CommonString1.KEY_SUCCESS_chkout)) {
                         database.updateCoverageStoreOutTime(coverageBean.get(0).getStoreId(),
                                 coverageBean.get(0).getVisitDate(), out_time, CommonString1.KEY_C);
-                        database.updateStoreStatusOnCheckout(coverageBean.get(0).getStoreId(), coverageBean.get(0).getVisitDate(), CommonString1.KEY_C);
+                        database.updateStoreStatusOnCheckout(coverageBean.get(0).getStoreId(),
+                                coverageBean.get(0).getVisitDate(), CommonString1.KEY_C);
                         data.value = 100;
                         data.name = "Checkout Done";
                         publishProgress(data);
@@ -675,6 +753,8 @@ public class CheckoutNUpload extends Activity {
     class Data {
         int value;
         String name;
+        String dialogname;
+
     }
 
     public String getCurrentTime() {
@@ -783,9 +863,14 @@ public class CheckoutNUpload extends Activity {
                 })
                 .setIcon(R.drawable.parinaam_logo_ico)
                 .show();
-
-
     }
-
+    public ArrayList<String> getFileNames(File[] file) {
+        ArrayList<String> arrayFiles = new ArrayList<String>();
+        if (file.length > 0) {
+            for (int i = 0; i < file.length; i++)
+                arrayFiles.add(file[i].getName());
+        }
+        return arrayFiles;
+    }
 
 }

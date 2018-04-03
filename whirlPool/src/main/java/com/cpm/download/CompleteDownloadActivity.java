@@ -26,6 +26,7 @@ import com.cpm.xmlGetterSetter.CategoryMasterGetterSetter;
 import com.cpm.xmlGetterSetter.ColdroomClosingGetterSetter;
 import com.cpm.xmlGetterSetter.CompanyGetterSetter;
 import com.cpm.xmlGetterSetter.DeepFreezerGetterSetter;
+import com.cpm.xmlGetterSetter.DeploymentXmlGetterSetter;
 import com.cpm.xmlGetterSetter.DesignationGetterSetter;
 import com.cpm.xmlGetterSetter.Deviation_Reason;
 import com.cpm.xmlGetterSetter.JourneyPlanGetterSetter;
@@ -61,7 +62,7 @@ public class CompleteDownloadActivity extends AppCompatActivity {
     private TextView percentage, message;
     private Data data;
     int eventType;
-    SkuMasterGetterSetter skumastergettersetter;
+/*    SkuMasterGetterSetter skumastergettersetter;
     MappingAvailabilityGetterSetter mappingavailgettersetter;
     MappingStatusWindows mapplingstatuswindows;
     MappingPromotionGetterSetter mappingprormotgettersetter;
@@ -85,8 +86,10 @@ public class CompleteDownloadActivity extends AppCompatActivity {
     Deviation_Reason deviation_Reason;
     Sup_Window supWin;
     Sup_Performance supperformance;
-    Sup_Merchandiser supMerchandiser;
+    Sup_Merchandiser supMerchandiser;*/
 
+
+    DeploymentXmlGetterSetter deploymentXmlgettersetter;
     JourneyPlanGetterSetter jcpgettersetter;
     NonWorkingReasonGetterSetter nonworkinggettersetter;
     POSM_MASTERGetterSetter posm_mastergettersetter;
@@ -240,6 +243,44 @@ public class CompleteDownloadActivity extends AppCompatActivity {
                 }
                 publishProgress(data);
 
+                // Deployment status
+                request = new SoapObject(CommonString1.NAMESPACE, CommonString1.METHOD_NAME_UNIVERSAL_DOWNLOAD);
+                request.addProperty("UserName", _UserId);
+                request.addProperty("Type", "DEPLOYMENT_STATUS");
+
+                envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                envelope.dotNet = true;
+                envelope.setOutputSoapObject(request);
+
+                androidHttpTransport = new HttpTransportSE(CommonString1.URL);
+                androidHttpTransport.call(CommonString1.SOAP_ACTION_UNIVERSAL, envelope);
+
+                Object deploymentResult = envelope.getResponse();
+
+                if (deploymentResult.toString() != null) {
+                    xpp.setInput(new StringReader(deploymentResult.toString()));
+                    xpp.next();
+                    eventType = xpp.getEventType();
+
+                    deploymentXmlgettersetter = XMLHandlers.deploymentXMLData(xpp, eventType);
+
+                    if (deploymentXmlgettersetter.getDeployment_master_table() != null) {
+                        String deploymentTable = deploymentXmlgettersetter.getDeployment_master_table();
+                        TableBean.setDeloymentTable(deploymentTable);
+                    }
+
+                    if (deploymentXmlgettersetter.getDEPLOY_STATUS_CD().size() > 0) {
+                        resultHttp = CommonString1.KEY_SUCCESS;
+                        data.value = 70;
+                        data.name = "Deployment Data Downloading";
+                    } else {
+                        return "DEPLOYMENT_STATUS";
+                        // promotion_flag = false;
+                    }
+                }
+                publishProgress(data);
+
+
 
                 //Non Working Reason data
                 request = new SoapObject(CommonString1.NAMESPACE, CommonString1.METHOD_NAME_UNIVERSAL_DOWNLOAD);
@@ -279,6 +320,7 @@ public class CompleteDownloadActivity extends AppCompatActivity {
                 db.insertJCPData(jcpgettersetter);
                 db.insertPOSM_MASTERData(posm_mastergettersetter);
                 db.insertNonWorkingReasonData(nonworkinggettersetter);
+                db.insetDeploymenyData(deploymentXmlgettersetter);
 
                 data.value = 100;
                 data.name = "Finishing";

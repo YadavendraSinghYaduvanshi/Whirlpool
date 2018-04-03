@@ -36,6 +36,7 @@ public class POSMCategoryListActivity extends AppCompatActivity {
     GSKDatabase db;
     String store_id, visit_date, username;
     private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,8 @@ public class POSMCategoryListActivity extends AppCompatActivity {
         db.open();
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         store_id = preferences.getString(CommonString1.KEY_STORE_CD, null);
-        toolbar.setTitle(getResources().getString(R.string.title_activity_category_list));
+        visit_date = preferences.getString(CommonString1.KEY_DATE, null);
+        toolbar.setTitle(getResources().getString(R.string.title_activity_category_list) +" - " + visit_date);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -88,7 +90,6 @@ public class POSMCategoryListActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         if (id == android.R.id.home) {
             overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
             finish();
@@ -120,9 +121,7 @@ public class POSMCategoryListActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
             final POSM_MASTER_DataGetterSetter data = list.get(position);
-
             holder.categoryName.setText(data.getPosm_category());
-
             if (db.checkPOSMCategoryData(store_id, data.getpCategory_cd())) {
                 holder.img_done.setVisibility(View.VISIBLE);
                 holder.img_done.setImageResource(R.drawable.tickgreenv);
@@ -136,6 +135,8 @@ public class POSMCategoryListActivity extends AppCompatActivity {
                     intent.putExtra("category_cd", data.getpCategory_cd());
                     intent.putExtra("posm_category", data.getPosm_category());
                     startActivity(intent);
+                    overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+
                 }
             });
         }
@@ -162,8 +163,7 @@ public class POSMCategoryListActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
-        finish();
         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+        finish();
     }
 }

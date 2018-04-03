@@ -7,6 +7,7 @@ import com.cpm.xmlGetterSetter.CategoryMasterGetterSetter;
 import com.cpm.xmlGetterSetter.ColdroomClosingGetterSetter;
 import com.cpm.xmlGetterSetter.CompanyGetterSetter;
 import com.cpm.xmlGetterSetter.DeepFreezerGetterSetter;
+import com.cpm.xmlGetterSetter.DeploymentXmlGetterSetter;
 import com.cpm.xmlGetterSetter.FailureGetterSetter;
 import com.cpm.xmlGetterSetter.JCPGetterSetter;
 import com.cpm.xmlGetterSetter.JourneyPlanGetterSetter;
@@ -802,6 +803,38 @@ public class XMLHandlers {
             e.printStackTrace();
         }
         return category;
+    }
+
+    public static DeploymentXmlGetterSetter deploymentXMLData(XmlPullParser xpp, int eventType) {
+        DeploymentXmlGetterSetter deploymentXmlGetterSetter = new DeploymentXmlGetterSetter();
+
+        try {
+            while (xpp.getEventType() != XmlPullParser.END_DOCUMENT) {
+                if (xpp.getEventType() == XmlPullParser.START_TAG) {
+
+                    if (xpp.getName().equals("META_DATA")) {
+                        deploymentXmlGetterSetter.setDeployment_master_table(xpp.nextText());
+                    }
+                    if (xpp.getName().equals("DEPLOY_STATUS_CD")) {
+                        deploymentXmlGetterSetter.setDEPLOY_STATUS_CD(xpp.nextText());
+                    }
+                    if (xpp.getName().equals("DEPLOY_STATUS")) {
+                        deploymentXmlGetterSetter.setDEPLOY_STATUS(xpp.nextText());
+                    }
+                    if (xpp.getName().equals("WHIRLPOOL_SKU")) {
+                        deploymentXmlGetterSetter.setWHIRLPOOL_SKU(xpp.nextText());
+                    }
+                }
+                xpp.next();
+            }
+        } catch (XmlPullParserException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return deploymentXmlGetterSetter;
     }
 	
 	

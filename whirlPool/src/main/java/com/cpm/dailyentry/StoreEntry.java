@@ -43,12 +43,13 @@ public class StoreEntry extends AppCompatActivity implements OnClickListener {
     private SharedPreferences preferences;
     String store_cd;
     boolean food_flag;
-    String user_type = "", GEO_TAG = "";
+    String user_type = "", GEO_TAG = "",date;
     private ArrayList<StockGetterSetter> stockData = new ArrayList<StockGetterSetter>();
     ValueAdapter adapter;
     RecyclerView recyclerView;
     ArrayList<POSM_MASTER_DataGetterSetter> categoryList;
     Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +65,10 @@ public class StoreEntry extends AppCompatActivity implements OnClickListener {
         food_flag = preferences.getBoolean(CommonString1.KEY_FOOD_STORE, false);
         GEO_TAG = preferences.getString(CommonString1.KEY_GEO_TAG, null);
         user_type = preferences.getString(CommonString1.KEY_USER_TYPE, null);
+        date = preferences.getString(CommonString1.KEY_DATE, null);
         intent = new Intent();
         intent.putExtra("cityItem", getIntent().getStringExtra("cityItem"));
+        setTitle("Store Entry - " + date);
     }
 
     @Override
@@ -311,6 +314,7 @@ public class StoreEntry extends AppCompatActivity implements OnClickListener {
         class MyViewHolder extends RecyclerView.ViewHolder {
             ImageView icon;
             TextView label;
+
             public MyViewHolder(View itemView) {
                 super(itemView);
                 icon = (ImageView) itemView.findViewById(R.id.list_icon);
@@ -381,14 +385,14 @@ public class StoreEntry extends AppCompatActivity implements OnClickListener {
             }
         }
         if (user_type.equals("Promoter")) {
-            int img[] = {Stock, middayImg, windows, assetImg, closingImg, /*additionalImg,*/ competitionImg};
+            int img[] = {Stock, middayImg, windows, assetImg, closingImg, competitionImg};
             for (int i = 0; i < img.length; i++) {
                 NavMenuItemGetterSetter recData = new NavMenuItemGetterSetter();
                 recData.setIconImg(img[i]);
                 data.add(recData);
             }
         } else if (user_type.equals("Merchandiser")) {
-            int img[] = {Stock,geotag, deploymentForm};
+            int img[] = {Stock, geotag, deploymentForm};
             String text[] = {"POSM", "Geo Tag", "Deployment form"};
             for (int i = 0; i < img.length; i++) {
                 NavMenuItemGetterSetter recData = new NavMenuItemGetterSetter();

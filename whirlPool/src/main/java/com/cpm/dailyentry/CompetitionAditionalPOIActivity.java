@@ -22,8 +22,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.cpm.Constants.CommonString1;
-import com.cpm.whirlpool.R;
 import com.cpm.database.GSKDatabase;
+import com.cpm.whirlpool.R;
 import com.cpm.xmlGetterSetter.AssetInsertdataGetterSetter;
 import com.cpm.xmlGetterSetter.FacingCompetitorGetterSetter;
 import com.cpm.xmlGetterSetter.STOREFIRSTIMEGetterSetter;

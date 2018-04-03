@@ -1,5 +1,6 @@
 package com.cpm.dailyentry;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -33,6 +35,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
 import java.io.File;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -50,9 +53,10 @@ public class StoreimageActivity extends AppCompatActivity implements View.OnClic
     AlertDialog alert;
     String img_str;
     private GSKDatabase database;
-    String lat, lon;
+    String lat = "0.0", lon = "0.0";
     GoogleApiClient mGoogleApiClient;
     Intent intent;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeimage);
@@ -69,6 +73,7 @@ public class StoreimageActivity extends AppCompatActivity implements View.OnClic
         username = preferences.getString(CommonString1.KEY_USERNAME, null);
         intent = new Intent(StoreimageActivity.this, DailyEntryScreen.class);
         intent.putExtra("cityItem", getIntent().getStringExtra("cityItem"));
+        setTitle("Store Image - " + visit_date);
         str = CommonString1.FILE_PATH;
         database = new GSKDatabase(this);
         database.open();
@@ -89,7 +94,6 @@ public class StoreimageActivity extends AppCompatActivity implements View.OnClic
             return;
         }
 
-
     }
 
     @Override
@@ -102,8 +106,8 @@ public class StoreimageActivity extends AppCompatActivity implements View.OnClic
         if (id == android.R.id.home) {
             // NavUtils.navigateUpFromSameTask(this);
             setResult(10, intent);
-            finish();
             overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -111,8 +115,8 @@ public class StoreimageActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onBackPressed() {
         setResult(10, intent);
-        finish();
         overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+        finish();
     }
 
     @Override
@@ -120,53 +124,40 @@ public class StoreimageActivity extends AppCompatActivity implements View.OnClic
         int id = v.getId();
         switch (id) {
             case R.id.img_cam_selfie:
-                _pathforcheck = store_cd + "_STOREIMG_" +visit_date.replace("/", "") +"_"+ getCurrentTime().replace(":", "") + ".jpg";
+                _pathforcheck = store_cd + "_STOREIMG_" + visit_date.replace("/", "") + "_" + getCurrentTime().replace(":", "") + ".jpg";
                 _path = CommonString1.FILE_PATH + _pathforcheck;
                 startCameraActivity();
                 break;
             case R.id.btn_save_selfie:
-                if (img_str != null) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(StoreimageActivity.this);
-                    builder.setMessage("Do you want to save the data ")
-                            .setCancelable(false)
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    alert.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
-                                    CoverageBean cdata = new CoverageBean();
-                                    cdata.setStoreId(store_cd);
-                                    cdata.setVisitDate(visit_date);
-                                    cdata.setUserId(username);
-                                    cdata.setInTime(getCurrentTime());
-                                    cdata.setReason("");
-                                    cdata.setReasonid("0");
-                                    cdata.setLatitude(lat);
-                                    cdata.setLongitude(lon);
-                                    cdata.setImage(img_str);
-                                    cdata.setRemark("");
-                                    cdata.setOutTime("");
-                                    cdata.setStatus(CommonString1.KEY_CHECK_IN);
-                                    cdata.setCity(getIntent().getStringExtra("cityItem"));
-                                    database.InsertCoverageData(cdata);
-                                    SharedPreferences.Editor editor = preferences.edit();
-                                    editor.putString(CommonString1.KEY_STOREVISITED_STATUS, "");
-                                    editor.commit();
-                                    Intent in = new Intent(StoreimageActivity.this, StoreEntry.class);
-                                    in.putExtra("cityItem", getIntent().getStringExtra("cityItem"));
-                                    startActivity(in);
-                                    finish();
-                                }
-                            })
-                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                public void onClick(
-                                        DialogInterface dialog,
-                                        int id) {
-                                    dialog.cancel();
-                                }
-                            });
+                if (img_str != null)
+                {
+                    CoverageBean cdata = new CoverageBean();
+                    cdata.setStoreId(store_cd);
+                    cdata.setVisitDate(visit_date);
+                    cdata.setUserId(username);
+                    cdata.setInTime(getCurrentTime());
+                    cdata.setReason("");
+                    cdata.setReasonid("0");
+                    cdata.setLatitude(lat);
+                    cdata.setLongitude(lon);
+                    cdata.setImage(img_str);
+                    cdata.setRemark("");
+                    cdata.setOutTime("");
+                    cdata.setStatus(CommonString1.KEY_CHECK_IN);
+                    cdata.setCity(getIntent().getStringExtra("cityItem"));
 
-                    alert = builder.create();
-                    alert.show();
-                } else {
+                    Intent in = new Intent(StoreimageActivity.this, DeploymentActivity.class);
+                    in.putExtra("coverageObj", (Serializable) cdata);
+                 //   in.putExtra("cityItem", getIntent().getStringExtra("cityItem"));
+                    startActivity(in);
+              /*      Intent in = new Intent(StoreimageActivity.this, StoreEntry.class);
+                    in.putExtra("cityItem", getIntent().getStringExtra("cityItem"));
+                    startActivity(in);*/
+                    overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+                    finish();
+                }
+                else
+                {
                     Snackbar.make(btn_save, "Please click the image", Snackbar.LENGTH_LONG).show();
                 }
                 break;
@@ -218,13 +209,23 @@ public class StoreimageActivity extends AppCompatActivity implements View.OnClic
 
     public String getCurrentTime() {
         Calendar m_cal = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss:mmm");
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
         String cdate = formatter.format(m_cal.getTime());
         return cdate;
     }
 
     @Override
     public void onConnected(Bundle bundle) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
             lat = String.valueOf(mLastLocation.getLatitude());

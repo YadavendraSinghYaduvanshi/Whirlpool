@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cpm.whirlpool"
-    android:versionCode="4"
-    android:versionName="1.3" >
+    android:versionCode="8"
+    android:versionName="1.7" >
 
     <uses-sdk
         android:minSdkVersion="15"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -30,9 +30,11 @@
         android:required="true" />
 
     <application
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@drawable/parinaam_logo_ico"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@style/AppTheme.NoActionBar" >
         <activity
             android:name="com.cpm.whirlpool.SplashScreenActivity"
@@ -262,6 +264,10 @@
             android:label="Deployment Form"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.cpm.dailyentry.DeploymentActivity"
+            android:parentActivityName="com.cpm.dailyentry.DailyEntryScreen"
+            android:screenOrientation="portrait" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

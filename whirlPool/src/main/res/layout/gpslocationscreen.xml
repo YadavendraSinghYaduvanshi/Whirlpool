@@ -45,13 +45,13 @@
                 android:textColor="#000000"
                 android:textSize="12sp" />
 
-            <Button
+            <ImageView
                 android:id="@+id/StoreFront"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView2"
                 android:layout_marginLeft="8dp"
-                android:background="@mipmap/camera_orange" />
+                android:src="@mipmap/camera_orange" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -97,18 +97,19 @@
                 android:background="@mipmap/camera_orange"
                 android:visibility="gone" />
 
-            <Button
+            <android.support.design.widget.FloatingActionButton
                 android:id="@+id/savedetails"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:layout_alignBottom="@+id/StoreFront"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
-                android:background="@drawable/save_active"
                 android:paddingLeft="10dp"
-                android:textSize="15sp" />
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/save_icon"
+                android:textSize="12sp" />
         </RelativeLayout>
 
         <RelativeLayout

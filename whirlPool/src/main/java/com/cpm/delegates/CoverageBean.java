@@ -1,6 +1,8 @@
 package com.cpm.delegates;
 
-public class CoverageBean {
+import java.io.Serializable;
+
+public class CoverageBean implements Serializable{
     protected int MID;
 
     protected String storeId;
@@ -90,6 +92,25 @@ public class CoverageBean {
     private String longitude;
     private String reasonid = "";
     private String sub_reasonId = "";
+    private String deployment_cd;
+    private String whirlpool_sku;
+
+    public String getDeployment_cd() {
+        return deployment_cd;
+    }
+
+    public void setDeployment_cd(String deployment_cd) {
+        this.deployment_cd = deployment_cd;
+    }
+
+    public String getWhirlpool_sku() {
+        return whirlpool_sku;
+    }
+
+    public void setWhirlpool_sku(String whirlpool_sku) {
+        this.whirlpool_sku = whirlpool_sku;
+    }
+
     public String getSub_reasonId() {
         return sub_reasonId;
     }

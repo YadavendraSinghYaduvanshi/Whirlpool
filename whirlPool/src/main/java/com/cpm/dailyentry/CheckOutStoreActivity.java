@@ -48,7 +48,6 @@ public class CheckOutStoreActivity extends Activity {
     private GSKDatabase db;
     private SharedPreferences preferences = null;
     ArrayList<CoverageBean> list_coverage = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -59,7 +58,6 @@ public class CheckOutStoreActivity extends Activity {
         visit_date = preferences.getString(CommonString1.KEY_DATE, null);
         db = new GSKDatabase(this);
         db.open();
-        //  visit_date = db.getVisiteDateFromCoverage(store_id);
         store_id = getIntent().getStringExtra(CommonString1.KEY_STORE_CD);
         list_coverage = db.getCoverageSpecificData(store_id);
         new BackgroundTask(this).execute();

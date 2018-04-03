@@ -1,684 +1,815 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-259:12
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-264:12
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-264:12
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-264:12
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-264:12
+MERGED from [com.android.support:design:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\ec36583e884c5890bfd56ce38bb255ae\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-8.4.0.aar\fd8ed847ea8d6ad179279c195a80418e\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-cast-8.4.0.aar\ade02c39e21d0d4cbe5af61ec74ae880\AndroidManifest.xml:16:1-20:12
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\dd0da1d6a12acfbf7af836af55999850\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\e86dc0c17baba94a0b7728358de517a0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\fea8e2fff895d230f7b1fddf1c90cb63\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.ksoichiro:android-observablescrollview:1.6.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\android-observablescrollview-1.6.0.aar\abde14f8bbb140ad5c704f2236134cf1\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.1.1.aar\e704ee2cace6696e5c537cf043e440e9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\a863e8d4cd2ccf16ca26385a1fa51fe3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\5856e0d63e4eb7dc96df37d75e075243\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-8.4.0.aar\56616f893e5915fad9e41fa415f97346\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:16:1-31:12
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appstate-8.4.0.aar\2bac06beff799ace6e8a025bee8086cf\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-games:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-games-8.4.0.aar\3975f59a3546f37e988cfea7d302387f\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-drive-8.4.0.aar\9302a08072c68e4330226680c491a009\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-fitness-8.4.0.aar\d5dea3b1fc740523dab748027d8da208\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-wallet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wallet-8.4.0.aar\d72737eb526f86fa65f024428b0e3795\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-identity-8.4.0.aar\3e9d7bfd2c76d56cf3e38c15b9af40ab\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-location-8.4.0.aar\4aacfeeb00635519ae38113c16f1b028\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-nearby-8.4.0.aar\f38aa57de0f460831e3a9d528529b443\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-panorama-8.4.0.aar\582ee2e7cb07acf20fa7a964d87e726b\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-plus-8.4.0.aar\b5704b8c401f38fad0f7fa543243a67f\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-8.4.0.aar\edf0e5c5c4deb00457f1ded5b3139a83\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-vision-8.4.0.aar\f16d5862cd420c9d2ad2d565bfe0611e\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wearable-8.4.0.aar\a497d779d2ef939a377875cf6ce11809\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-base-8.4.0.aar\58c632fed711e49738c83b551c258fa8\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:16:1-47:12
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.4.0.aar\c4ab9e774657422090b2f38fc3f075a8\AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\86d22594636e00dd9a1cfa8f997ffa75\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-264:12
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-264:12
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:1-264:12
 	package
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:3:5-32
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:5:5-30
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
-	android:versionCode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:4:5-28
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
 uses-sdk
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:design:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\c257ef71dad57572ec0faea34c55fce1e0fd4368\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\3b9fe61bb62d93bbfc0dddfe1268e4b2c3dfd9d6\output\AndroidManifest.xml:20:5-43
-MERGED from [com.github.ksoichiro:android-observablescrollview:1.6.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\e1df7ceb187b19d99ff6f8dfa656f6e528e5bd35\output\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\f053b0cba06d6193f8af949cf7fffdb177e327bd\output\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\77b5d2b13dd3afed1337dee479c15a1490356a67\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:23:5-42
-MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\e06824087b938243d56484bdd6eaad3deb40a6aa\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\12be01d9f06deb05c68c7322e02c7ca9f5f72fd4\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-appstate:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\569debf278935a387056a7c18f8dc6df6c52c303\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-cast:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\a5d6840e7aac5bc4cf57c2507ddedd23ca9e17a9\output\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\2e0035eeeffc28dc00e81002ec171e7c46cba524\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\37114a92b09733590c9f0ff965b708862df47420\output\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-fitness:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\56447f9390dbed32f27751f0548826b50b4c4cf2\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-games:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\2bc11f4a3d4d5964f64d84c8b6c80071b7bce500\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-drive:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\c25c693def0068527ac8fadfb259908467ef3186\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\bd268c5463514695f399da01c5c3819b20f139ed\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\f700636653b0e23af198d513a49a6de3cebcdd5c\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\7100b1d8a5d92cb833d93ad805bb4efbc8871457\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-panorama:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\5abbaa800a30128336e8de8d905178eb4a06a7cd\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-plus:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\616a4d7c9a7323de155a8cd790f634156a6b7add\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2d460426ec4521c28ed906b7b9da1fc94f6a6c\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-vision:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\5244498a0025924e052384574ccded096a21eb00\output\AndroidManifest.xml:4:5-42
-MERGED from [com.google.android.gms:play-services-wallet:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\e289ccf6a3bb1b5e158f448717aa8783ffb3cf89\output\AndroidManifest.xml:19:5-42
-MERGED from [com.google.android.gms:play-services-identity:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\25c0056a0b5ff4f91610bb656278032d3bcc54d0\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\AndroidManifest.xml:26:5-42
-MERGED from [com.google.android.gms:play-services-wearable:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\7e4cbd0d2ff84ba389660fd80f251ab7a145a1ff\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\95adb6c0327ee4572caf93edf85a302ef4060260\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\33ffa30cdb4423b1e56869c1e39bf4ddd2fc984d\output\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\77f486359ef793284992df2831504ed62c567aca\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jeevanp.CPMIN.000\.android\build-cache\9aaf9d6078e2188d81dc725d53f5b78e1b02b382\output\AndroidManifest.xml:5:5-7:41
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\ec36583e884c5890bfd56ce38bb255ae\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\ec36583e884c5890bfd56ce38bb255ae\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-8.4.0.aar\fd8ed847ea8d6ad179279c195a80418e\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-8.4.0.aar\fd8ed847ea8d6ad179279c195a80418e\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-cast-8.4.0.aar\ade02c39e21d0d4cbe5af61ec74ae880\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-cast-8.4.0.aar\ade02c39e21d0d4cbe5af61ec74ae880\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\dd0da1d6a12acfbf7af836af55999850\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\dd0da1d6a12acfbf7af836af55999850\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\e86dc0c17baba94a0b7728358de517a0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\e86dc0c17baba94a0b7728358de517a0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\fea8e2fff895d230f7b1fddf1c90cb63\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\fea8e2fff895d230f7b1fddf1c90cb63\AndroidManifest.xml:20:5-43
+MERGED from [com.github.ksoichiro:android-observablescrollview:1.6.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\android-observablescrollview-1.6.0.aar\abde14f8bbb140ad5c704f2236134cf1\AndroidManifest.xml:21:5-43
+MERGED from [com.github.ksoichiro:android-observablescrollview:1.6.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\android-observablescrollview-1.6.0.aar\abde14f8bbb140ad5c704f2236134cf1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.1.1.aar\e704ee2cace6696e5c537cf043e440e9\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.1.1.aar\e704ee2cace6696e5c537cf043e440e9\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\a863e8d4cd2ccf16ca26385a1fa51fe3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\a863e8d4cd2ccf16ca26385a1fa51fe3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\5856e0d63e4eb7dc96df37d75e075243\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\5856e0d63e4eb7dc96df37d75e075243\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-8.4.0.aar\56616f893e5915fad9e41fa415f97346\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-8.4.0.aar\56616f893e5915fad9e41fa415f97346\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appstate-8.4.0.aar\2bac06beff799ace6e8a025bee8086cf\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appstate-8.4.0.aar\2bac06beff799ace6e8a025bee8086cf\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-games:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-games-8.4.0.aar\3975f59a3546f37e988cfea7d302387f\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-games:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-games-8.4.0.aar\3975f59a3546f37e988cfea7d302387f\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-drive-8.4.0.aar\9302a08072c68e4330226680c491a009\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-drive-8.4.0.aar\9302a08072c68e4330226680c491a009\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-fitness-8.4.0.aar\d5dea3b1fc740523dab748027d8da208\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-fitness-8.4.0.aar\d5dea3b1fc740523dab748027d8da208\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wallet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wallet-8.4.0.aar\d72737eb526f86fa65f024428b0e3795\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-wallet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wallet-8.4.0.aar\d72737eb526f86fa65f024428b0e3795\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-identity-8.4.0.aar\3e9d7bfd2c76d56cf3e38c15b9af40ab\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-identity-8.4.0.aar\3e9d7bfd2c76d56cf3e38c15b9af40ab\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-location-8.4.0.aar\4aacfeeb00635519ae38113c16f1b028\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-location-8.4.0.aar\4aacfeeb00635519ae38113c16f1b028\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-nearby-8.4.0.aar\f38aa57de0f460831e3a9d528529b443\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-nearby-8.4.0.aar\f38aa57de0f460831e3a9d528529b443\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-panorama-8.4.0.aar\582ee2e7cb07acf20fa7a964d87e726b\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-panorama-8.4.0.aar\582ee2e7cb07acf20fa7a964d87e726b\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-plus-8.4.0.aar\b5704b8c401f38fad0f7fa543243a67f\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-plus-8.4.0.aar\b5704b8c401f38fad0f7fa543243a67f\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-8.4.0.aar\edf0e5c5c4deb00457f1ded5b3139a83\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-8.4.0.aar\edf0e5c5c4deb00457f1ded5b3139a83\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-vision-8.4.0.aar\f16d5862cd420c9d2ad2d565bfe0611e\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-vision-8.4.0.aar\f16d5862cd420c9d2ad2d565bfe0611e\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wearable-8.4.0.aar\a497d779d2ef939a377875cf6ce11809\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wearable-8.4.0.aar\a497d779d2ef939a377875cf6ce11809\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-base-8.4.0.aar\58c632fed711e49738c83b551c258fa8\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-base-8.4.0.aar\58c632fed711e49738c83b551c258fa8\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.4.0.aar\c4ab9e774657422090b2f38fc3f075a8\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.4.0.aar\c4ab9e774657422090b2f38fc3f075a8\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\86d22594636e00dd9a1cfa8f997ffa75\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\86d22594636e00dd9a1cfa8f997ffa75\AndroidManifest.xml:20:5-43
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:9:9-38
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:8:9-34
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
-		INJECTED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:8:9-34
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
+		INJECTED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:11:5-79
-MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\e06824087b938243d56484bdd6eaad3deb40a6aa\output\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\7100b1d8a5d92cb833d93ad805bb4efbc8871457\output\AndroidManifest.xml:19:5-79
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\AndroidManifest.xml:20:5-78
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:11:5-79
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-nearby-8.4.0.aar\f38aa57de0f460831e3a9d528529b443\AndroidManifest.xml:19:5-79
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-nearby-8.4.0.aar\f38aa57de0f460831e3a9d528529b443\AndroidManifest.xml:19:5-79
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:11:22-76
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:11:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:12:5-81
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:12:22-78
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:13:5-79
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:13:22-76
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:13:22-76
 uses-permission#android.permission.INTERNET
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:14:5-67
-MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\e06824087b938243d56484bdd6eaad3deb40a6aa\output\AndroidManifest.xml:21:5-67
-MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:19:5-67
-MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\bd268c5463514695f399da01c5c3819b20f139ed\output\AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:21:5-67
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\AndroidManifest.xml:21:5-66
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:14:5-67
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:19:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:19:5-67
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:14:22-64
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:14:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:15:5-81
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:15:5-81
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:15:22-78
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:15:22-78
 uses-permission#android.permission.WRITE_SYNC_SETTINGS
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:16:5-78
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:16:5-78
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:16:22-75
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:16:22-75
 uses-permission#android.permission.WAKE_LOCK
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:17:5-68
-MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:24:5-67
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:17:5-68
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:17:22-65
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:17:22-65
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:18:5-75
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:18:5-75
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:18:22-72
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:18:22-72
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:19:5-80
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:19:5-80
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:19:22-77
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:19:22-77
 uses-permission#android.permission.CALL_PHONE
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:20:5-69
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:20:5-69
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:20:22-66
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:20:22-66
 uses-permission#com.htc.tms.permission.MAPS_RECEIVE
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:21:5-75
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:21:5-75
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:21:22-72
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:21:22-72
 application
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:25:5-257:19
-MERGED from [com.android.support:design:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\c257ef71dad57572ec0faea34c55fce1e0fd4368\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\3b9fe61bb62d93bbfc0dddfe1268e4b2c3dfd9d6\output\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\77b5d2b13dd3afed1337dee479c15a1490356a67\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:24:5-32:19
-MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\e06824087b938243d56484bdd6eaad3deb40a6aa\output\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\12be01d9f06deb05c68c7322e02c7ca9f5f72fd4\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:20:5-30:19
-MERGED from [com.google.android.gms:play-services-appstate:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\569debf278935a387056a7c18f8dc6df6c52c303\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:20:5-32:19
-MERGED from [com.google.android.gms:play-services-cast:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\a5d6840e7aac5bc4cf57c2507ddedd23ca9e17a9\output\AndroidManifest.xml:19:5-20
-MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\2e0035eeeffc28dc00e81002ec171e7c46cba524\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\37114a92b09733590c9f0ff965b708862df47420\output\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-fitness:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\56447f9390dbed32f27751f0548826b50b4c4cf2\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-games:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\2bc11f4a3d4d5964f64d84c8b6c80071b7bce500\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-drive:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\c25c693def0068527ac8fadfb259908467ef3186\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\bd268c5463514695f399da01c5c3819b20f139ed\output\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\f700636653b0e23af198d513a49a6de3cebcdd5c\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:26:5-46:19
-MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\7100b1d8a5d92cb833d93ad805bb4efbc8871457\output\AndroidManifest.xml:20:5-20
-MERGED from [com.google.android.gms:play-services-panorama:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\5abbaa800a30128336e8de8d905178eb4a06a7cd\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-plus:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\616a4d7c9a7323de155a8cd790f634156a6b7add\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2d460426ec4521c28ed906b7b9da1fc94f6a6c\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-vision:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\5244498a0025924e052384574ccded096a21eb00\output\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-identity:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\25c0056a0b5ff4f91610bb656278032d3bcc54d0\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\AndroidManifest.xml:27:5-20
-MERGED from [com.google.android.gms:play-services-wearable:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\7e4cbd0d2ff84ba389660fd80f251ab7a145a1ff\output\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\33ffa30cdb4423b1e56869c1e39bf4ddd2fc984d\output\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\jeevanp.CPMIN.000\.android\build-cache\77f486359ef793284992df2831504ed62c567aca\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jeevanp.CPMIN.000\.android\build-cache\9aaf9d6078e2188d81dc725d53f5b78e1b02b382\output\AndroidManifest.xml:9:5-20
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:25:5-262:19
+MERGED from [com.android.support:design:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\ec36583e884c5890bfd56ce38bb255ae\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\ec36583e884c5890bfd56ce38bb255ae\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-8.4.0.aar\fd8ed847ea8d6ad179279c195a80418e\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-8.4.0.aar\fd8ed847ea8d6ad179279c195a80418e\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-cast-8.4.0.aar\ade02c39e21d0d4cbe5af61ec74ae880\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-cast-8.4.0.aar\ade02c39e21d0d4cbe5af61ec74ae880\AndroidManifest.xml:19:5-20
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\dd0da1d6a12acfbf7af836af55999850\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\dd0da1d6a12acfbf7af836af55999850\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\e86dc0c17baba94a0b7728358de517a0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\e86dc0c17baba94a0b7728358de517a0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\fea8e2fff895d230f7b1fddf1c90cb63\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\fea8e2fff895d230f7b1fddf1c90cb63\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\a863e8d4cd2ccf16ca26385a1fa51fe3\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\a863e8d4cd2ccf16ca26385a1fa51fe3\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-analytics-8.4.0.aar\de06298b48a18750de8aaf265cdfe45e\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-8.4.0.aar\56616f893e5915fad9e41fa415f97346\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-8.4.0.aar\56616f893e5915fad9e41fa415f97346\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appstate-8.4.0.aar\2bac06beff799ace6e8a025bee8086cf\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appstate-8.4.0.aar\2bac06beff799ace6e8a025bee8086cf\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-games:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-games-8.4.0.aar\3975f59a3546f37e988cfea7d302387f\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-games:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-games-8.4.0.aar\3975f59a3546f37e988cfea7d302387f\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-drive-8.4.0.aar\9302a08072c68e4330226680c491a009\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-drive-8.4.0.aar\9302a08072c68e4330226680c491a009\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-fitness-8.4.0.aar\d5dea3b1fc740523dab748027d8da208\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-fitness-8.4.0.aar\d5dea3b1fc740523dab748027d8da208\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-identity-8.4.0.aar\3e9d7bfd2c76d56cf3e38c15b9af40ab\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-identity-8.4.0.aar\3e9d7bfd2c76d56cf3e38c15b9af40ab\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-location-8.4.0.aar\4aacfeeb00635519ae38113c16f1b028\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-location-8.4.0.aar\4aacfeeb00635519ae38113c16f1b028\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-nearby-8.4.0.aar\f38aa57de0f460831e3a9d528529b443\AndroidManifest.xml:20:5-20
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-nearby-8.4.0.aar\f38aa57de0f460831e3a9d528529b443\AndroidManifest.xml:20:5-20
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-panorama-8.4.0.aar\582ee2e7cb07acf20fa7a964d87e726b\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-panorama-8.4.0.aar\582ee2e7cb07acf20fa7a964d87e726b\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-plus-8.4.0.aar\b5704b8c401f38fad0f7fa543243a67f\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-plus-8.4.0.aar\b5704b8c401f38fad0f7fa543243a67f\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-8.4.0.aar\edf0e5c5c4deb00457f1ded5b3139a83\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-8.4.0.aar\edf0e5c5c4deb00457f1ded5b3139a83\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-vision-8.4.0.aar\f16d5862cd420c9d2ad2d565bfe0611e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-vision-8.4.0.aar\f16d5862cd420c9d2ad2d565bfe0611e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wearable-8.4.0.aar\a497d779d2ef939a377875cf6ce11809\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-wearable-8.4.0.aar\a497d779d2ef939a377875cf6ce11809\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:26:5-46:19
+MERGED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:26:5-46:19
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.4.0.aar\c4ab9e774657422090b2f38fc3f075a8\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.4.0.aar\c4ab9e774657422090b2f38fc3f075a8\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\86d22594636e00dd9a1cfa8f997ffa75\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\86d22594636e00dd9a1cfa8f997ffa75\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:28:9-41
-	android:allowBackup
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:26:9-35
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:28:9-41
+	android:largeHeap
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:29:9-33
 	android:icon
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:27:9-51
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:27:9-51
+	android:allowBackup
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:26:9-35
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:29:9-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:30:9-52
 activity#com.cpm.whirlpool.SplashScreenActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:30:9-39:20
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:31:9-40:20
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:33:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:34:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:32:13-45
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:33:13-45
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:31:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:32:13-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:34:13-38:29
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:35:13-39:29
 action#android.intent.action.MAIN
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:35:17-69
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:35:25-66
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:36:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:37:17-77
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:38:17-77
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:37:27-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:38:27-74
 activity#com.cpm.autoupdate.AutoupdateActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:40:9-42:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:41:9-43:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:42:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:43:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:41:13-65
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:42:13-65
 activity#com.cpm.web.ShowUpdateActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:43:9-45:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:44:9-46:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:45:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:46:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:44:13-58
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:45:13-58
 activity#com.cpm.whirlpool.MainActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:46:9-48:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:47:9-49:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:48:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:49:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:47:13-41
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:48:13-41
 activity#com.cpm.download.CompleteDownloadActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:49:9-51:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:50:9-52:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:51:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:52:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:50:13-69
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:51:13-69
 activity#com.cpm.dailyentry.DailyEntryScreen
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:52:9-55:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:53:9-56:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:55:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:56:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:54:13-39
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:55:13-39
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:53:13-63
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:54:13-63
 activity#com.cpm.upload.UploadOptionActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:56:9-58:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:57:9-59:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:58:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:59:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:57:13-63
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:58:13-63
 activity#com.cpm.upload.UploadDataActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:59:9-61:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:60:9-62:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:61:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:62:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:60:13-61
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:61:13-61
 activity#com.cpm.upload.CheckoutNUpload
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:62:9-64:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:63:9-65:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:64:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:65:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:63:13-58
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:64:13-58
 activity#com.cpm.upload.UploadAllImageActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:65:9-67:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:66:9-68:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:67:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:68:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:66:13-65
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:67:13-65
 activity#com.cpm.dailyentry.StoreEntry
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:68:9-71:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:69:9-72:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:71:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:72:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:70:13-40
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:71:13-40
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:69:13-57
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:70:13-57
 activity#com.cpm.dailyentry.StoreType
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:72:9-74:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:73:9-75:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:74:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:75:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:73:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:74:13-56
 activity#com.cpm.dailyentry.DeepFreezerActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:75:9-78:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:76:9-79:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:77:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:78:13-49
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:78:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:79:13-52
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:76:13-66
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:77:13-66
 activity#com.cpm.dailyentry.MccainType
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:79:9-81:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:80:9-82:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:81:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:82:13-49
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:80:13-57
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:81:13-57
 activity#com.cpm.dailyentry.OpeningStock
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:82:9-87:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:83:9-88:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:86:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:87:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:85:13-47
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:86:13-47
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:87:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:88:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:84:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:85:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:83:13-59
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:84:13-59
 activity#com.cpm.dailyentry.ClosingStock
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:88:9-93:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:89:9-94:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:92:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:93:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:91:13-62
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:92:13-62
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:93:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:94:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:90:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:91:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:89:13-59
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:90:13-59
 activity#com.cpm.dailyentry.MidDayStock
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:94:9-99:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:95:9-100:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:98:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:99:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:97:13-60
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:98:13-60
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:99:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:100:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:96:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:97:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:95:13-58
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:96:13-58
 activity#com.cpm.dailyentry.WindowsActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:100:9-105:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:101:9-106:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:104:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:105:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:103:13-42
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:104:13-42
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:105:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:106:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:102:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:103:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:101:13-62
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:102:13-62
 activity#com.cpm.dailyentry.PosmActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:106:9-110:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:107:9-111:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:109:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:110:13-49
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:110:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:111:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:108:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:109:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:107:13-59
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:108:13-59
 activity#com.cpm.dailyentry.AssetActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:111:9-116:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:112:9-117:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:115:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:116:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:114:13-34
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:115:13-34
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:116:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:117:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:113:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:114:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:112:13-60
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:113:13-60
 activity#com.cpm.dailyentry.NonWorkingReason
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:117:9-120:52
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:118:9-121:52
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:120:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:121:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:119:13-40
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:120:13-40
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:118:13-63
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:119:13-63
 activity#com.cpm.dailyentry.FoodStore
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:121:9-125:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:122:9-126:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:124:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:125:13-49
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:125:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:126:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:123:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:124:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:122:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:123:13-56
 activity#com.cpm.dailyentry.FacingCompetitor
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:126:9-131:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:127:9-132:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:130:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:131:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:129:13-46
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:130:13-46
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:131:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:132:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:128:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:129:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:127:13-63
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:128:13-63
 activity#com.cpm.dailyentry.UploadSelect
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:132:9-136:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:133:9-137:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:135:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:136:13-49
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:136:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:137:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:134:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:135:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:133:13-59
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:134:13-59
 activity#com.cpm.dailyentry.CheckOutStoreActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:137:9-141:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:138:9-142:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:140:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:141:13-49
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:141:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:142:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:139:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:140:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:138:13-68
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:139:13-68
 activity#com.cpm.dailyentry.CallsActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:142:9-146:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:143:9-147:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:145:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:146:13-49
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:146:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:147:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:144:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:145:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:143:13-60
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:144:13-60
 activity#com.cpm.dailyentry.Performance
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:147:9-151:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:148:9-152:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:150:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:151:13-49
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:151:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:152:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:149:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:150:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:148:13-58
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:149:13-58
 activity#com.cpm.whirlpool.MainMenuActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:152:9-156:59
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:153:9-157:59
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:155:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:156:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:154:13-38
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:155:13-38
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:156:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:157:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:153:13-45
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:154:13-45
 activity#com.cpm.whirlpool.LoginActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:157:9-161:59
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:158:9-162:59
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:160:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:161:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:159:13-45
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:160:13-45
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:161:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:162:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:158:13-42
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:159:13-42
 activity#com.cpm.dailyentry.CompetionMenuActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:162:9-166:59
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:163:9-167:59
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:165:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:166:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:164:13-66
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:165:13-66
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:166:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:167:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:163:13-68
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:164:13-68
 activity#com.cpm.dailyentry.CompetitionFaceupActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:167:9-172:59
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:168:9-173:59
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:171:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:172:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:170:13-70
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:171:13-70
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:169:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:170:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:172:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:173:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:168:13-72
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:169:13-72
 activity#com.cpm.dailyentry.CompetitionAditionalPOIActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:173:9-179:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:174:9-180:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:177:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:178:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:176:13-43
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:177:13-43
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:179:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:180:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:175:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:176:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:178:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:179:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:174:13-78
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:175:13-78
 activity#com.cpm.dailyentry.CompetitionPromotionsActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:180:9-186:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:181:9-187:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:184:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:185:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:183:13-38
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:184:13-38
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:186:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:187:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:182:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:183:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:185:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:186:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:181:13-76
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:182:13-76
 activity#com.cpm.dailyentry.STOREFIRSTTIMEActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:187:9-192:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:188:9-193:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:191:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:192:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:190:13-41
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:191:13-41
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:192:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:193:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:189:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:190:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:188:13-69
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:189:13-69
 activity#com.cpm.dailyentry.GeoFence_Activity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:193:9-196:59
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:194:9-197:59
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:195:13-62
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:196:13-62
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:196:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:197:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:194:13-64
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:195:13-64
 activity#com.cpm.dailyentry.StoreimageActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:197:9-203:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:198:9-204:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:201:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:202:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:200:13-46
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:201:13-46
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:203:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:204:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:199:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:200:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:202:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:203:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:198:13-65
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:199:13-65
 activity#com.cpm.dailyentry.ISSUE_TYPEActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:204:9-210:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:205:9-211:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:208:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:209:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:207:13-46
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:208:13-46
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:210:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:211:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:206:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:207:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:209:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:210:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:205:13-65
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:206:13-65
 activity#com.cpm.geotag.LocationActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:211:9-217:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:212:9-218:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:215:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:216:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:214:13-38
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:215:13-38
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:217:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:218:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:213:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:214:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:216:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:217:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:212:13-59
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:213:13-59
 activity#com.cpm.geotag.UploadGeotaggingActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:218:9-224:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:219:9-225:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:222:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:223:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:221:13-45
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:222:13-45
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:224:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:225:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:220:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:221:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:223:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:224:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:219:13-67
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:220:13-67
 activity#com.cpm.dailyentry.POSMCategoryListActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:225:9-231:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:226:9-232:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:229:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:230:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:228:13-42
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:229:13-42
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:231:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:232:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:227:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:228:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:230:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:231:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:226:13-71
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:227:13-71
 activity#com.cpm.dailyentry.Posm_TrackingActivity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:232:9-238:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:233:9-239:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:236:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:237:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:235:13-42
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:236:13-42
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:238:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:239:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:234:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:235:13-74
 	android:theme
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:237:13-56
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:238:13-56
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:233:13-68
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:234:13-68
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:245:9-247:71
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:246:9-248:71
 	android:value
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:247:13-68
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:248:13-68
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:246:13-62
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:247:13-62
 meta-data#com.google.android.gms.version
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:248:9-250:69
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\33ffa30cdb4423b1e56869c1e39bf4ddd2fc984d\output\AndroidManifest.xml:21:9-23:69
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:249:9-251:69
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.4.0.aar\c4ab9e774657422090b2f38fc3f075a8\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.4.0.aar\c4ab9e774657422090b2f38fc3f075a8\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:250:13-66
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:251:13-66
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:249:13-58
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:250:13-58
 activity#com.cpm.dailyentry.DeploymentFormActvity
-ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:252:9-256:55
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:253:9-258:55
 	android:screenOrientation
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:255:13-49
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:257:13-49
 	android:label
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:254:13-44
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:256:13-44
 	android:windowSoftInputMode
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:256:13-52
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:258:13-52
 	android:configChanges
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:253:13-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:255:13-74
 	android:name
-		ADDED from F:\jeevanAndroidProject\androidProject\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:252:19-74
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:254:13-68
+activity#com.cpm.dailyentry.DeploymentActivity
+ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:259:9-261:89
+	android:screenOrientation
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:260:13-49
+	android:parentActivityName
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:261:13-77
+	android:name
+		ADDED from D:\Neeraj\Final Projects\whirlpool-23AUG\whirlpool-23AUG\whirlPool\src\main\AndroidManifest.xml:259:19-71
 activity#com.google.android.gms.ads.AdActivity
-ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:26:9-29:64
+ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:26:9-29:64
 	android:configChanges
-		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:28:13-122
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:28:13-122
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:29:13-61
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:29:13-61
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:27:13-65
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:27:13-65
 activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
-ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:30:9-31:52
+ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:30:9-31:52
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:31:13-50
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:31:13-50
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\110ed55c10177e913ae372cece9c39d7bc9ddb0e\output\AndroidManifest.xml:30:19-91
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-ads-8.4.0.aar\cabf6e194881a5f4ceeceaabc8bebd00\AndroidManifest.xml:30:19-91
 activity#com.google.android.gms.appinvite.PreviewActivity
-ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:21:9-29:20
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:21:9-29:20
 	android:exported
-		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:23:17-40
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:23:17-40
 	android:theme
-		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:24:17-63
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:24:17-63
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:22:17-48
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:22:17-48
 intent-filter#android.intent.category.DEFAULT+com.google.android.gms.appinvite.ACTION_PREVIEW
-ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:25:13-28:29
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:25:13-28:29
 action#com.google.android.gms.appinvite.ACTION_PREVIEW
-ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:26:17-89
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:26:17-89
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:26:25-87
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:26:25-87
 category#android.intent.category.DEFAULT
-ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:27:17-75
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:27:17-75
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\1c2238df28e7aefe001d228a6b315cad440a866f\output\AndroidManifest.xml:27:27-73
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-8.4.0.aar\f932e9775b2dd696d33759460832d752\AndroidManifest.xml:27:27-73
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:21:9-24:46
+ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:21:9-24:46
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:23:19-52
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:23:19-52
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:24:19-43
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:24:19-43
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:22:19-78
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:22:19-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:21:19-72
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:21:19-72
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:28:9-31:110
+ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:28:9-31:110
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:30:13-36
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:30:13-36
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:31:13-107
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:31:13-107
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\8f08821b04d7128a719726e62421d07f78b4c4a9\output\AndroidManifest.xml:29:13-62
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-auth-8.4.0.aar\ebd5456b7f972a1791c5998d1946fe06\AndroidManifest.xml:29:13-62
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\bd268c5463514695f399da01c5c3819b20f139ed\output\AndroidManifest.xml:21:5-82
+ADDED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:21:5-82
 	android:name
-		ADDED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\bd268c5463514695f399da01c5c3819b20f139ed\output\AndroidManifest.xml:21:22-79
-provider#com.google.android.gms.measurement.AppMeasurementContentProvider
-ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:28:7-31:37
-	android:authorities
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:29:11-76
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:31:11-35
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:30:11-90
-receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:33:7-39:18
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:35:11-33
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:34:11-83
-intent-filter#com.google.android.gms.measurement.UPLOAD
-ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:36:9-38:25
-action#com.google.android.gms.measurement.UPLOAD
-ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:37:11-77
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:37:19-75
-service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:41:7-44:37
-	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:43:11-33
-	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:44:11-35
-	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\32567a4470bc4f0a7dfa3e6853b9d7f26e087a56\output\AndroidManifest.xml:42:11-82
+		ADDED from [com.google.android.gms:play-services-gcm:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-gcm-8.4.0.aar\36a2efaf48b36a953f755ff80ad531b5\AndroidManifest.xml:21:22-79
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\AndroidManifest.xml:22:5-24:33
+ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:22:5-24:33
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\AndroidManifest.xml:23:8-40
+		ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:23:8-40
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\jeevanp.CPMIN.000\.android\build-cache\22194851ffae6d3fcce4f597a5d78e8459650b7f\output\AndroidManifest.xml:24:8-31
+		ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.4.0.aar\02a590fb778ec098d7a8c25fbc0f2ec7\AndroidManifest.xml:24:8-31
+provider#com.google.android.gms.measurement.AppMeasurementContentProvider
+ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:28:7-31:37
+	android:authorities
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:29:11-76
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:31:11-35
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:30:11-90
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:33:7-39:18
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:35:11-33
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:34:11-83
+intent-filter#com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:36:9-38:25
+action#com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:37:11-77
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:37:19-75
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:41:7-44:37
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:43:11-33
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:44:11-35
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:8.4.0] C:\Users\neerajg\.gradle\caches\transforms-1\files-1.1\play-services-measurement-8.4.0.aar\60d6d29892e6ccc231cb0340b94dd904\AndroidManifest.xml:42:11-82

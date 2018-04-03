@@ -22,6 +22,7 @@ import com.cpm.xmlGetterSetter.CompanyGetterSetter;
 import com.cpm.xmlGetterSetter.CompetitionPromotionGetterSetter;
 import com.cpm.xmlGetterSetter.DeepFreezerTypeGetterSetter;
 import com.cpm.xmlGetterSetter.DeploymentFormGetterSetter;
+import com.cpm.xmlGetterSetter.DeploymentXmlGetterSetter;
 import com.cpm.xmlGetterSetter.FacingCompetitorGetterSetter;
 import com.cpm.xmlGetterSetter.FoodStoreInsertDataGetterSetter;
 import com.cpm.xmlGetterSetter.HeaderGetterSetter;
@@ -47,8 +48,8 @@ import java.util.List;
 
 
 public class GSKDatabase extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "WHIRLPOOL_DATABASE_1";
-    public static final int DATABASE_VERSION = 3;
+    public static final String DATABASE_NAME = "WHIRLPOOL_DATABASE_3";
+    public static final int DATABASE_VERSION = 5;
     private SQLiteDatabase db;
 
     public GSKDatabase(Context completeDownloadActivity) {
@@ -72,6 +73,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
         db.execSQL(TableBean.getjcptable());
         db.execSQL(TableBean.getNonworkingtable());
         db.execSQL(TableBean.getPosm_master_table_Bean());
+        db.execSQL(TableBean.getDeloymentTable());
         db.execSQL(CommonString1.CREATE_TABLE_DEEPFREEZER_DATA);
         db.execSQL(CommonString1.CREATE_TABLE_OPENING_STOCK_DATA);
         db.execSQL(CommonString1.CREATE_TABLE_CLOSING_STOCK_DATA);
@@ -96,7 +98,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
         db.execSQL(CommonString1.CREATE_TABLE_INSERT_POSM_DATA);
 
         db.execSQL(CommonString1.CREATE_TABLE_ASSET_CHECKLIST_INSERT);
-        db.execSQL(CommonString.CREATE_TABLE_STORE_GEOTAGGING);
+
 
         db.execSQL(CommonString1.CREATE_TABLE_CHECK_LIST_DATA);
 
@@ -104,6 +106,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
         db.execSQL(CommonString1.CREATE_TABLE_INSERT_STORE_CAMERA);
         db.execSQL(CommonString1.CREATE_TABLE_INSERT_POSM_TRACKING_DATA);
         db.execSQL(CommonString1.CREATE_TABLE_INSERT_DEPLOYMENT_FORM_DATA);
+        db.execSQL(CommonString.CREATE_TABLE_STORE_GEOTAGGING);
 
     }
 
@@ -127,18 +130,41 @@ public class GSKDatabase extends SQLiteOpenHelper {
     public void deleteAllTables() {
         // DELETING TABLES GTGSK
         db.delete(CommonString1.TABLE_COVERAGE_DATA, null, null);
-        db.delete(CommonString.TABLE_STORE_GEOTAGGING, null, null);
         db.delete(CommonString1.TABLE_DEPLOYMENT_FORM, null, null);
         //Gagan
         db.delete(CommonString1.TABLE_INSERT_STORE_CAMERA, null, null);
         db.delete(CommonString1.TABLE_INSERT_POSM_TRACKING_DATA, null, null);
+        db.delete(CommonString.TABLE_STORE_GEOTAGGING, null, null);
+    }
+
+    public void deletePreviousUploadedData(String visit_date) {
+        Cursor dbcursor = null;
+        try {
+            dbcursor = db.rawQuery("SELECT  * from COVERAGE_DATA where VISIT_DATE < '" + visit_date + "'", null);
+            if (dbcursor != null) {
+                dbcursor.moveToFirst();
+                int icount = dbcursor.getCount();
+                dbcursor.close();
+                if (icount > 0) {
+                    db.delete(CommonString1.TABLE_COVERAGE_DATA, null, null);
+                    db.delete(CommonString1.TABLE_DEPLOYMENT_FORM, null, null);
+                    db.delete(CommonString1.TABLE_INSERT_STORE_CAMERA, null, null);
+                    db.delete(CommonString1.TABLE_INSERT_POSM_TRACKING_DATA, null, null);
+                    db.delete(CommonString.TABLE_STORE_GEOTAGGING, null, null);
+                }
+                dbcursor.close();
+            }
+
+        } catch (Exception e) {
+            Log.d("Exception when fetching Coverage Data!!!!!!!!!!!!!!!!!!!!!", e.toString());
+
+        }
     }
 
 
     public void deleteStockHeaderData() {
         db.delete("openingHeader_data", null, null);
     }
-
 
     //JCP data
     public void insertJCPData(JourneyPlanGetterSetter data) {
@@ -3034,36 +3060,9 @@ public class GSKDatabase extends SQLiteOpenHelper {
     }
 
 
-    public String getVisiteDateFromCoverage(String storeid) {
-
-        Cursor dbcursor = null;
-        String visite_date = "";
-        try {
-            dbcursor = db.rawQuery("SELECT  * from "
-                    + CommonString1.TABLE_COVERAGE_DATA + "  WHERE "
-                    + CommonString1.KEY_STORE_ID + " ='" + storeid
-                    + "'", null);
-
-            if (dbcursor != null) {
-                dbcursor.moveToFirst();
-
-                visite_date = dbcursor.getString(dbcursor
-                        .getColumnIndexOrThrow(CommonString1.KEY_VISIT_DATE));
-
-                dbcursor.close();
-
-            }
-
-        } catch (Exception e) {
-            Log.d("Exception when fetching Records!!!!!!!!!!!!!!!!!!!!!",
-                    e.toString());
-        }
-
-        return visite_date;
-    }
-
-
     public long InsertCoverageData(CoverageBean data) {
+        db.delete(CommonString1.TABLE_COVERAGE_DATA, CommonString1.KEY_STORE_ID + "='" + data.getStoreId() + "'", null);
+
         ContentValues values = new ContentValues();
         try {
             values.put(CommonString1.KEY_STORE_ID, data.getStoreId());
@@ -3082,13 +3081,35 @@ public class GSKDatabase extends SQLiteOpenHelper {
             values.put(CommonString1.KEY_REASON, data.getReason());
             values.put(CommonString1.KEY_GEO_TAG, data.getGEO_TAG());
             values.put(CommonString1.KEY_CITY, data.getCity());
-
             return db.insert(CommonString1.TABLE_COVERAGE_DATA, null, values);
-
         } catch (Exception ex) {
             Log.d("Database ", "Exception while Insert Closes Data " + ex.toString());
         }
         return 0;
+    }
+
+    // getCoverageData
+    public CoverageBean getCoverageWhirlpoolSkuData(String visitdate, String store_cd) {
+        CoverageBean sb = new CoverageBean();
+        Cursor dbcursor = null;
+        try {
+            dbcursor = db.rawQuery("SELECT  * from " + CommonString1.TABLE_COVERAGE_DATA +
+                    " where " + CommonString1.KEY_VISIT_DATE + "='" + visitdate + "' and " + CommonString1.KEY_STORE_ID + "='" + store_cd + "'", null);
+
+            if (dbcursor != null) {
+                dbcursor.moveToFirst();
+                while (!dbcursor.isAfterLast()) {
+                    sb.setDeployment_cd(dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_DEPLOYMENT_CD)));
+                    sb.setWhirlpool_sku((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_WHIRLPOOL_SKU))));
+                    dbcursor.moveToNext();
+                }
+                dbcursor.close();
+                return sb;
+            }
+        } catch (Exception e) {
+            Log.d("Exception ", "when fetching Coverage Data!!!!!!!!!!!!!!!!!!!!!" + e.toString());
+        }
+        return sb;
     }
 
     // getCoverageData
@@ -3105,7 +3126,6 @@ public class GSKDatabase extends SQLiteOpenHelper {
 
                 while (!dbcursor.isAfterLast()) {
                     CoverageBean sb = new CoverageBean();
-
                     sb.setStoreId(dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_STORE_ID)));
                     sb.setUserId((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_USER_ID))));
                     sb.setInTime(((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_IN_TIME)))));
@@ -3114,17 +3134,12 @@ public class GSKDatabase extends SQLiteOpenHelper {
                     sb.setLatitude(((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_LATITUDE)))));
                     sb.setLongitude(((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_LONGITUDE)))));
                     sb.setStatus((((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_COVERAGE_STATUS))))));
+                    sb.setDeployment_cd((((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_DEPLOYMENT_CD))))));
                     sb.setImage((((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_IMAGE))))));
                     sb.setReason((((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_REASON))))));
                     sb.setReasonid((((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_REASON_ID))))));
                     sb.setMID(Integer.parseInt(((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_ID))))));
-
-                    if (dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_COVERAGE_REMARK)) == null) {
-                        sb.setRemark("");
-                    } else {
-                        sb.setRemark((((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_COVERAGE_REMARK))))));
-                    }
-
+                    sb.setRemark((((dbcursor.getString(dbcursor.getColumnIndexOrThrow(CommonString1.KEY_COVERAGE_REMARK))))));
                     list.add(sb);
                     dbcursor.moveToNext();
                 }
@@ -3136,6 +3151,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
         }
         return list;
     }
+
 
     // getCoverageData
     public ArrayList<CoverageBean> getCoverageSpecificData(String store_id) {
@@ -3174,11 +3190,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
 
         try {
 
-            dbcursor = db
-                    .rawQuery(
-                            "SELECT * FROM COVERAGE_DATA " + "where "
-                                    + CommonString1.KEY_VISIT_DATE + "<>'" + visit_date + "'", null);
-
+            dbcursor = db.rawQuery("SELECT * FROM COVERAGE_DATA " + "where " + CommonString1.KEY_VISIT_DATE + "<>'" + visit_date + "'", null);
             if (dbcursor != null) {
                 dbcursor.moveToFirst();
                 int icount = dbcursor.getInt(0);
@@ -3196,23 +3208,25 @@ public class GSKDatabase extends SQLiteOpenHelper {
         return filled;
     }
 
-    public void updateCoverageStatus(int mid, String status) {
+    public long updateCoverageStatus(int mid, String status) {
+        long l = 0;
         try {
             ContentValues values = new ContentValues();
             values.put(CommonString1.KEY_COVERAGE_STATUS, status);
-            db.update(CommonString1.TABLE_COVERAGE_DATA, values, CommonString1.KEY_STORE_ID + "=" + mid, null);
+            l = db.update(CommonString1.TABLE_COVERAGE_DATA, values, CommonString1.KEY_STORE_ID + "=" + mid, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return l;
     }
 
     public long updateCoverageStoreOutTime(String StoreId, String VisitDate, String outtime, String status) {
-        long l=0;
+        long l = 0;
         try {
             ContentValues values = new ContentValues();
             values.put(CommonString1.KEY_OUT_TIME, outtime);
             values.put(CommonString1.KEY_COVERAGE_STATUS, status);
-          l=  db.update(CommonString1.TABLE_COVERAGE_DATA, values, CommonString1.KEY_STORE_ID + "='" + StoreId + "' AND " + CommonString1.KEY_VISIT_DATE + "='" + VisitDate + "'", null);
+            l = db.update(CommonString1.TABLE_COVERAGE_DATA, values, CommonString1.KEY_STORE_ID + "='" + StoreId + "' AND " + CommonString1.KEY_VISIT_DATE + "='" + VisitDate + "'", null);
         } catch (Exception e) {
 
         }
@@ -3943,6 +3957,44 @@ public class GSKDatabase extends SQLiteOpenHelper {
         return categoryData;
     }
 
+
+    //POSM Tracking Default Data
+    public ArrayList<POSM_MASTER_DataGetterSetter> getPOSMCategoryHeaderWithoutCompetitorData(String pCategory_cd) {
+        Log.d("Fetching", "POSM Tracking--------------->Start<------------");
+
+        ArrayList<POSM_MASTER_DataGetterSetter> categoryData = new ArrayList<>();
+        Cursor dbcursor = null;
+
+        try {
+            dbcursor = db.rawQuery("Select DISTINCT PSUB_CATEGORY_CD,PSUB_CATEGORY " +
+                    "from POSM_MASTER " +
+                    "where  PCATEGORY_CD= '" + pCategory_cd + "' AND PSUB_CATEGORY NOT LIKE '"+"%Competition%"+"'", null);
+
+
+            if (dbcursor != null) {
+                int numrows = dbcursor.getCount();
+                dbcursor.moveToFirst();
+
+                for (int i = 1; i <= numrows; ++i) {
+                    POSM_MASTER_DataGetterSetter data = new POSM_MASTER_DataGetterSetter();
+
+                    data.setpSub_Category_cd(dbcursor.getString(dbcursor.getColumnIndexOrThrow("PSUB_CATEGORY_CD")));
+                    data.setpSub_Category(dbcursor.getString(dbcursor.getColumnIndexOrThrow("PSUB_CATEGORY")));
+
+                    categoryData.add(data);
+                    dbcursor.moveToNext();
+                }
+                dbcursor.close();
+            }
+        } catch (Exception e) {
+            Log.d("Exception", " when fetching Records!!!!!!!!!!!!!!!!!!!!! " + e.getMessage());
+        }
+
+        Log.d("Fetching", "POSM Tracking---------------------->Stop<-----------");
+        return categoryData;
+    }
+
+
     public ArrayList<POSM_MASTER_DataGetterSetter> getPOSMCategoryChildData(String pCategory_cd, String pSub_Category_cd) {
         Log.d("FetchingCagtegorydata", "--------------->Start<------------");
 
@@ -3960,7 +4012,6 @@ public class GSKDatabase extends SQLiteOpenHelper {
 
                 for (int i = 1; i <= numrows; ++i) {
                     POSM_MASTER_DataGetterSetter data = new POSM_MASTER_DataGetterSetter();
-
                     data.setPosm_cd(dbcursor.getString(dbcursor.getColumnIndexOrThrow("POSM_CD")));
                     data.setPosm(dbcursor.getString(dbcursor.getColumnIndexOrThrow("POSM")));
                     data.setpSub_Category_cd(dbcursor.getString(dbcursor.getColumnIndexOrThrow("PSUB_CATEGORY_CD")));
@@ -4032,6 +4083,8 @@ public class GSKDatabase extends SQLiteOpenHelper {
     public void InsertPOSMCategoryData(String store_cd, String category_cd, List<POSM_MASTER_DataGetterSetter> hashMapListHeaderData,
                                        HashMap<POSM_MASTER_DataGetterSetter, List<POSM_MASTER_DataGetterSetter>> hashMapListChildData) {
 
+        db.delete(CommonString1.TABLE_INSERT_POSM_TRACKING_DATA, "STORE_CD" + "='" + store_cd + "'AND PCATEGORY_CD ='" + category_cd + "'", null);
+
         ContentValues values = new ContentValues();
         try {
             db.beginTransaction();
@@ -4045,7 +4098,6 @@ public class GSKDatabase extends SQLiteOpenHelper {
                     values.put("POSM_CATEGORY", hashMapListHeaderData.get(i).getPosm_category());
                     values.put("PSUB_CATEGORY_CD", data.getpSub_Category_cd());
                     values.put("PSUB_CATEGORY", data.getpSub_Category());
-
                     if (!data.getOldValue().equals("")) {
                         values.put("OLD_VALUE", data.getOldValue());
                     } else {
@@ -4066,42 +4118,6 @@ public class GSKDatabase extends SQLiteOpenHelper {
         }
     }
 
-    public void updatePOSMCategoryData(String store_cd, String category_cd,
-                                       List<POSM_MASTER_DataGetterSetter> hashMapListHeaderData,
-                                       HashMap<POSM_MASTER_DataGetterSetter, List<POSM_MASTER_DataGetterSetter>> hashMapListChildData) {
-
-        ContentValues values = new ContentValues();
-
-        try {
-            db.beginTransaction();
-            for (int i = 0; i < hashMapListHeaderData.size(); i++) {
-
-                for (int j = 0; j < hashMapListChildData.get(hashMapListHeaderData.get(i)).size(); j++) {
-                    POSM_MASTER_DataGetterSetter data = hashMapListChildData.get(hashMapListHeaderData.get(i)).get(j);
-
-                    if (!data.getOldValue().equals("")) {
-                        values.put("OLD_VALUE", data.getOldValue());
-                    } else {
-                        values.put("OLD_VALUE", "0");
-                    }
-
-                    if (!data.getNewValue().equals("")) {
-                        values.put("NEW_VALUE", data.getNewValue());
-                    } else {
-                        values.put("NEW_VALUE", "0");
-                    }
-
-                    db.update(CommonString1.TABLE_INSERT_POSM_TRACKING_DATA, values,
-                            "POSM_CD ='" + data.getPosm_cd() + "' AND PCATEGORY_CD='" + category_cd +
-                                    "' AND STORE_CD='" + store_cd + "'", null);
-                }
-            }
-            db.setTransactionSuccessful();
-            db.endTransaction();
-        } catch (Exception ex) {
-            Log.d("Exception ", " in Update POSM Tracking " + ex.toString());
-        }
-    }
 
     public boolean checkPOSMCategoryData(String store_cd, String pCategory_cd) {
         Log.d("POSM Tracking Data ", "Posm Tracking data--------------->Start<------------");
@@ -4143,7 +4159,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
 
         try {
             dbcursor = db.rawQuery("Select * from " + CommonString1.TABLE_INSERT_POSM_TRACKING_DATA +
-                    " where STORE_CD='" + store_cd + "' and OLD_VALUE<>0 or NEW_VALUE<>0 ", null);
+                    " where STORE_CD='" + store_cd + "' AND NEW_VALUE<>0 ", null);
 
 
             if (dbcursor != null) {
@@ -4176,6 +4192,7 @@ public class GSKDatabase extends SQLiteOpenHelper {
 
     //POSM Tracking images
     public void InsertStore_wise_camera(POSM_MASTER_DataGetterSetter data) {
+        db.delete(CommonString1.TABLE_INSERT_STORE_CAMERA, "STORE_CD" + "='" + data.getStore_cd() + "' AND PCATEGORY_CD ='" + data.getpCategory_cd() + "'", null);
         ContentValues values = new ContentValues();
         try {
             values.put("STORE_CD", data.getStore_cd());
@@ -4388,7 +4405,6 @@ public class GSKDatabase extends SQLiteOpenHelper {
                     sb.setCheckOutStatus((dbcursor.getString(dbcursor.getColumnIndexOrThrow("CHECKOUT_STATUS"))));
                     sb.setVISIT_DATE((dbcursor.getString(dbcursor.getColumnIndexOrThrow("VISIT_DATE"))));
                     sb.setGEO_TAG((dbcursor.getString(dbcursor.getColumnIndexOrThrow("GEO_TAG"))));
-
                     list.add(sb);
                     dbcursor.moveToNext();
                 }
@@ -4457,7 +4473,6 @@ public class GSKDatabase extends SQLiteOpenHelper {
                 return list;
             }
         } catch (Exception e) {
-            Log.d("Exception ", "when fetching Non working!!!!!!!!!!! " + e.toString());
             return list;
         }
         Log.d("Fetching ", "non working data---------------------->Stop<-----------");
@@ -4567,4 +4582,64 @@ public class GSKDatabase extends SQLiteOpenHelper {
         return df;
     }
 
+    public void insetDeploymenyData(DeploymentXmlGetterSetter data) {
+
+        db.delete("DEPLOYMENT_STATUS", null, null);
+        ContentValues values = new ContentValues();
+        try {
+            values.put("DEPLOY_STATUS_CD", "");
+            values.put("DEPLOY_STATUS", "Select");
+            values.put("WHIRLPOOL_SKU", "");
+            db.insert("DEPLOYMENT_STATUS", null, values);
+            for (int i = 0; i < data.getDEPLOY_STATUS_CD().size(); i++) {
+                values.put("DEPLOY_STATUS_CD", Integer.parseInt(data.getDEPLOY_STATUS_CD().get(i)));
+                values.put("DEPLOY_STATUS", data.getDEPLOY_STATUS().get(i));
+                values.put("WHIRLPOOL_SKU", Integer.parseInt(data.getWHIRLPOOL_SKU().get(i)));
+                db.insert("DEPLOYMENT_STATUS", null, values);
+            }
+
+        } catch (Exception ex) {
+            Log.d("Database Exception while Insert Deployment Data ",
+                    ex.toString());
+        }
+    }
+
+    public ArrayList<DeploymentXmlGetterSetter> getDeloymentData() {
+
+        ArrayList<DeploymentXmlGetterSetter> list = new ArrayList<>();
+        Cursor dbcursor = null;
+        try {
+            dbcursor = db.rawQuery("SELECT * from DEPLOYMENT_STATUS", null);
+            if (dbcursor != null) {
+                dbcursor.moveToFirst();
+                while (!dbcursor.isAfterLast()) {
+                    DeploymentXmlGetterSetter dx = new DeploymentXmlGetterSetter();
+                    dx.setDEPLOY_STATUS_CD(dbcursor.getString(dbcursor.getColumnIndexOrThrow("DEPLOY_STATUS_CD")));
+                    dx.setWHIRLPOOL_SKU(dbcursor.getString(dbcursor.getColumnIndexOrThrow("WHIRLPOOL_SKU")));
+                    dx.setDEPLOY_STATUS(dbcursor.getString(dbcursor.getColumnIndexOrThrow("DEPLOY_STATUS")));
+                    list.add(dx);
+                    dbcursor.moveToNext();
+
+                }
+                dbcursor.close();
+                return list;
+            }
+        } catch (Exception e) {
+            return list;
+        }
+        return list;
+    }
+
+    public long updateCoverageDeploymentStatus(String date, String store_cd, String selectedItemCd, String whirlpool_sku) {
+        long l = 0;
+        try {
+            ContentValues values = new ContentValues();
+            values.put(CommonString1.KEY_DEPLOYMENT_CD, selectedItemCd);
+            values.put(CommonString1.KEY_WHIRLPOOL_SKU, whirlpool_sku);
+            l = db.update(CommonString1.TABLE_COVERAGE_DATA, values, CommonString1.KEY_STORE_ID + "='" + store_cd + "' AND " + CommonString1.KEY_VISIT_DATE + "='" + date + "'", null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return l;
+    }
 }
